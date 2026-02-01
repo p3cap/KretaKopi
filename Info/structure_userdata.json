@@ -1,0 +1,87 @@
+{
+	"student": {
+		"id": "00000000000",
+		"name": "Placeholder Name",
+		"class": "00x",
+		"school": {
+			"id": "school_id_000",
+			"name": "School Name Placeholder"
+		}
+	},
+
+	"teachers": {
+		"0000": { "name": "Teacher Name" }
+	},
+
+	"classes": {
+		"Subject-ID-Format": {
+			"subject": "Subject Name",
+			"teacher_ids": ["0000"]
+		}
+	},
+
+	"grades": {
+		"Subject-ID-Format": [
+			{ 
+				"grade": 0, 
+				"weight": 0, 
+				"date": "0000-00-00", 
+				"description": "Description placeholder" 
+			}
+		]
+	},
+
+	"calculated_averages": {
+		"student_subject_averages": {
+			"Subject-ID-Format": 0.00
+		},
+		"class_subject_averages": {
+			"Subject-ID-Format": 0.00
+		},
+		"overall_student_average": 0.00
+	},
+
+	"timetable": {
+		"Monday": [
+			{ 
+				"class_id": "Subject-ID-Format", 
+				"room": "000", 
+				"teacher_id": "0000", 
+				"start_time": "00:00", 
+				"end_time": "00:00" 
+			}
+		],
+		"Tuesday": [],
+		"Wednesday": [],
+		"Thursday": [],
+		"Friday": []
+	},
+
+	"omissions": [
+		{ 
+			"date": "0000-00-00", 
+			"class_id": "Subject-ID-Format", 
+			"teacher_id": "0000", 
+			"is_justified": false, 
+			"justification_type": "" 
+		}
+	],
+
+	"homework": [
+		{
+			"class_id": "Subject-ID-Format",
+			"assigned_date": "0000-00-00",
+			"deadline": "0000-00-00",
+			"description": ""
+		}
+	],
+
+	"exams": [
+		{
+			"class_id": "Subject-ID-Format",
+			"date": "0000-00-00",
+			"type": "",
+			"weight": 0
+		}
+	]
+}

@@ -1,0 +1,42 @@
+{
+	"student": {
+		"id": -999,
+		"name": null,
+		"class": "Invalid_Class_Format_Long_String_123456789"
+	},
+
+	"grades": {
+		"Mathematics": [
+			{ "grade": 12, "weight": -50, "date": "not-a-date", "description": "" },
+			{ "grade": "five", "weight": null, "date": "2026-13-45", "description": null }
+		],
+		"Unmatched-Subject-Key": []
+	},
+
+	"calculated_averages": {
+		"student_subject_averages": {
+			"Physics": "NaN",
+			"English": -1.5,
+			"Informatics": 999.99
+		},
+		"overall_student_average": "4,45"
+	},
+
+	"timetable": {
+		"NotADay": [
+			{ "class_id": null, "room": 404, "teacher_id": "9999", "start_time": "25:00", "end_time": "08:00" }
+		],
+		"Monday": "Should be an array but I am a string"
+	},
+
+	"omissions": [
+		{ 
+            "date": null, 
+            "class_id": "Does-Not-Exist", 
+            "is_justified": "Yes", 
+            "justification_type": 123 
+        }
+	],
+
+	"missing_fields": "The 'homework' and 'exams' keys are entirely missing from this object."
+}

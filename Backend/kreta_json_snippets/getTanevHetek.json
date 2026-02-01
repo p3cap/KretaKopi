@@ -1,0 +1,320 @@
+[
+    {
+        "Value": "2025-09-01",
+        "Text": "1. hét (2025.09.01. - 2025.09.07.)",
+        "GroupName": null,
+        "IsSelected": false
+    },
+    {
+        "Value": "2025-09-08",
+        "Text": "2. hét (2025.09.08. - 2025.09.14.)",
+        "GroupName": null,
+        "IsSelected": false
+    },
+    {
+        "Value": "2025-09-15",
+        "Text": "3. hét (2025.09.15. - 2025.09.21.)",
+        "GroupName": null,
+        "IsSelected": false
+    },
+    {
+        "Value": "2025-09-22",
+        "Text": "4. hét (2025.09.22. - 2025.09.28.)",
+        "GroupName": null,
+        "IsSelected": false
+    },
+    {
+        "Value": "2025-09-29",
+        "Text": "5. hét (2025.09.29. - 2025.10.05.)",
+        "GroupName": null,
+        "IsSelected": false
+    },
+    {
+        "Value": "2025-10-06",
+        "Text": "6. hét (2025.10.06. - 2025.10.12.)",
+        "GroupName": null,
+        "IsSelected": false
+    },
+    {
+        "Value": "2025-10-13",
+        "Text": "7. hét (2025.10.13. - 2025.10.19.)",
+        "GroupName": null,
+        "IsSelected": false
+    },
+    {
+        "Value": "2025-10-20",
+        "Text": "8. hét (2025.10.20. - 2025.10.26.)",
+        "GroupName": null,
+        "IsSelected": false
+    },
+    {
+        "Value": "2025-10-27",
+        "Text": "9. hét (2025.10.27. - 2025.11.02.)",
+        "GroupName": null,
+        "IsSelected": false
+    },
+    {
+        "Value": "2025-11-03",
+        "Text": "10. hét (2025.11.03. - 2025.11.09.)",
+        "GroupName": null,
+        "IsSelected": false
+    },
+    {
+        "Value": "2025-11-10",
+        "Text": "11. hét (2025.11.10. - 2025.11.16.)",
+        "GroupName": null,
+        "IsSelected": false
+    },
+    {
+        "Value": "2025-11-17",
+        "Text": "12. hét (2025.11.17. - 2025.11.23.)",
+        "GroupName": null,
+        "IsSelected": false
+    },
+    {
+        "Value": "2025-11-24",
+        "Text": "13. hét (2025.11.24. - 2025.11.30.)",
+        "GroupName": null,
+        "IsSelected": false
+    },
+    {
+        "Value": "2025-12-01",
+        "Text": "14. hét (2025.12.01. - 2025.12.07.)",
+        "GroupName": null,
+        "IsSelected": false
+    },
+    {
+        "Value": "2025-12-08",
+        "Text": "15. hét (2025.12.08. - 2025.12.14.)",
+        "GroupName": null,
+        "IsSelected": false
+    },
+    {
+        "Value": "2025-12-15",
+        "Text": "16. hét (2025.12.15. - 2025.12.21.)",
+        "GroupName": null,
+        "IsSelected": false
+    },
+    {
+        "Value": "2025-12-22",
+        "Text": "17. hét (2025.12.22. - 2025.12.28.)",
+        "GroupName": null,
+        "IsSelected": false
+    },
+    {
+        "Value": "2025-12-29",
+        "Text": "18. hét (2025.12.29. - 2026.01.04.)",
+        "GroupName": null,
+        "IsSelected": false
+    },
+    {
+        "Value": "2026-01-05",
+        "Text": "19. hét (2026.01.05. - 2026.01.11.)",
+        "GroupName": null,
+        "IsSelected": false
+    },
+    {
+        "Value": "2026-01-12",
+        "Text": "20. hét (2026.01.12. - 2026.01.18.)",
+        "GroupName": null,
+        "IsSelected": false
+    },
+    {
+        "Value": "2026-01-19",
+        "Text": "21. hét (2026.01.19. - 2026.01.25.)",
+        "GroupName": null,
+        "IsSelected": false
+    },
+    {
+        "Value": "2026-01-26",
+        "Text": "22. hét (2026.01.26. - 2026.02.01.)",
+        "GroupName": null,
+        "IsSelected": false
+    },
+    {
+        "Value": "2026-02-02",
+        "Text": "23. hét (2026.02.02. - 2026.02.08.)",
+        "GroupName": null,
+        "IsSelected": false
+    },
+    {
+        "Value": "2026-02-09",
+        "Text": "24. hét (2026.02.09. - 2026.02.15.)",
+        "GroupName": null,
+        "IsSelected": false
+    },
+    {
+        "Value": "2026-02-16",
+        "Text": "25. hét (2026.02.16. - 2026.02.22.)",
+        "GroupName": null,
+        "IsSelected": false
+    },
+    {
+        "Value": "2026-02-23",
+        "Text": "26. hét (2026.02.23. - 2026.03.01.)",
+        "GroupName": null,
+        "IsSelected": false
+    },
+    {
+        "Value": "2026-03-02",
+        "Text": "27. hét (2026.03.02. - 2026.03.08.)",
+        "GroupName": null,
+        "IsSelected": false
+    },
+    {
+        "Value": "2026-03-09",
+        "Text": "28. hét (2026.03.09. - 2026.03.15.)",
+        "GroupName": null,
+        "IsSelected": false
+    },
+    {
+        "Value": "2026-03-16",
+        "Text": "29. hét (2026.03.16. - 2026.03.22.)",
+        "GroupName": null,
+        "IsSelected": false
+    },
+    {
+        "Value": "2026-03-23",
+        "Text": "30. hét (2026.03.23. - 2026.03.29.)",
+        "GroupName": null,
+        "IsSelected": false
+    },
+    {
+        "Value": "2026-03-30",
+        "Text": "31. hét (2026.03.30. - 2026.04.05.)",
+        "GroupName": null,
+        "IsSelected": false
+    },
+    {
+        "Value": "2026-04-06",
+        "Text": "32. hét (2026.04.06. - 2026.04.12.)",
+        "GroupName": null,
+        "IsSelected": false
+    },
+    {
+        "Value": "2026-04-13",
+        "Text": "33. hét (2026.04.13. - 2026.04.19.)",
+        "GroupName": null,
+        "IsSelected": false
+    },
+    {
+        "Value": "2026-04-20",
+        "Text": "34. hét (2026.04.20. - 2026.04.26.)",
+        "GroupName": null,
+        "IsSelected": false
+    },
+    {
+        "Value": "2026-04-27",
+        "Text": "35. hét (2026.04.27. - 2026.05.03.)",
+        "GroupName": null,
+        "IsSelected": false
+    },
+    {
+        "Value": "2026-05-04",
+        "Text": "36. hét (2026.05.04. - 2026.05.10.)",
+        "GroupName": null,
+        "IsSelected": false
+    },
+    {
+        "Value": "2026-05-11",
+        "Text": "37. hét (2026.05.11. - 2026.05.17.)",
+        "GroupName": null,
+        "IsSelected": false
+    },
+    {
+        "Value": "2026-05-18",
+        "Text": "38. hét (2026.05.18. - 2026.05.24.)",
+        "GroupName": null,
+        "IsSelected": false
+    },
+    {
+        "Value": "2026-05-25",
+        "Text": "39. hét (2026.05.25. - 2026.05.31.)",
+        "GroupName": null,
+        "IsSelected": false
+    },
+    {
+        "Value": "2026-06-01",
+        "Text": "40. hét (2026.06.01. - 2026.06.07.)",
+        "GroupName": null,
+        "IsSelected": false
+    },
+    {
+        "Value": "2026-06-08",
+        "Text": "41. hét (2026.06.08. - 2026.06.14.)",
+        "GroupName": null,
+        "IsSelected": false
+    },
+    {
+        "Value": "2026-06-15",
+        "Text": "42. hét (2026.06.15. - 2026.06.21.)",
+        "GroupName": null,
+        "IsSelected": false
+    },
+    {
+        "Value": "2026-06-22",
+        "Text": "43. hét (2026.06.22. - 2026.06.28.)",
+        "GroupName": null,
+        "IsSelected": false
+    },
+    {
+        "Value": "2026-06-29",
+        "Text": "44. hét (2026.06.29. - 2026.07.05.)",
+        "GroupName": null,
+        "IsSelected": false
+    },
+    {
+        "Value": "2026-07-06",
+        "Text": "45. hét (2026.07.06. - 2026.07.12.)",
+        "GroupName": null,
+        "IsSelected": false
+    },
+    {
+        "Value": "2026-07-13",
+        "Text": "46. hét (2026.07.13. - 2026.07.19.)",
+        "GroupName": null,
+        "IsSelected": false
+    },
+    {
+        "Value": "2026-07-20",
+        "Text": "47. hét (2026.07.20. - 2026.07.26.)",
+        "GroupName": null,
+        "IsSelected": false
+    },
+    {
+        "Value": "2026-07-27",
+        "Text": "48. hét (2026.07.27. - 2026.08.02.)",
+        "GroupName": null,
+        "IsSelected": false
+    },
+    {
+        "Value": "2026-08-03",
+        "Text": "49. hét (2026.08.03. - 2026.08.09.)",
+        "GroupName": null,
+        "IsSelected": false
+    },
+    {
+        "Value": "2026-08-10",
+        "Text": "50. hét (2026.08.10. - 2026.08.16.)",
+        "GroupName": null,
+        "IsSelected": false
+    },
+    {
+        "Value": "2026-08-17",
+        "Text": "51. hét (2026.08.17. - 2026.08.23.)",
+        "GroupName": null,
+        "IsSelected": false
+    },
+    {
+        "Value": "2026-08-24",
+        "Text": "52. hét (2026.08.24. - 2026.08.30.)",
+        "GroupName": null,
+        "IsSelected": false
+    },
+    {
+        "Value": "2026-08-31",
+        "Text": "53. hét (2026.08.31. - 2026.08.31.)",
+        "GroupName": null,
+        "IsSelected": false
+    }
+]
