@@ -1,4 +1,7 @@
-<script>
+<script setup lang="js">
+//translation
+import { translateKey as t } from "@/../data/translate.js";
+
 import Navbar from "../components/Navbar.vue";
 </script>
 
@@ -6,31 +9,35 @@ import Navbar from "../components/Navbar.vue";
     <div id="days">
         <ul>
             <li>
-                <p>Hé</p>
+                <p>{{ t("monday").slice(0,2) }}</p>
+                <!-- 
+                Pl fordítás: "monday" kulcs és csak az első 2 betűt mutassa 
+                fordítás hozzáadása a data/translate.js fájlban
+                -->
                 <p>6</p>
             </li>
             <li>
-                <p>Ke</p>
+                <p>{{ t("tuesday").slice(0,2) }}</p>
                 <p>31</p>
             </li>
             <li>
-                <p>Sze</p>
+                <p>{{ t("wednesday").slice(0,2) }}</p>
                 <p>13</p>
             </li>
             <li>
-                <p>Csü</p>
+                <p>{{ t("thursday").slice(0,2) }}</p>
                 <p>0</p>
             </li>
             <li>
-                <p>Pé</p>
+                <p>{{ t("friday").slice(0,2) }}</p>
                 <p>0</p>
             </li>
             <li>
-                <p>Szo</p>
+                <p>{{ t("saturday").slice(0,2) }}</p>
                 <p>0</p>
             </li>
             <li>
-                <p>Va</p>
+                <p>{{ t("sunday").slice(0,2) }}</p>
                 <p>0</p>
             </li>
         </ul>

@@ -1,20 +1,58 @@
-import { getData } from "./processed_data"
-import languages from "./languges.json" assert { type: "json" };
+// translation dictionaries
+const translationDictonary = {
+  "HU": {
+    // general
+    "monday": "Hétfő",
+    "tuesday": "Kedd",
+    "wednesday": "Szerda",
+    "thursday": "Csütörtök",
+    "friday": "Péntek",
+    "saturday": "Szombat",
+    "sunday": "Vasárnap",
+    "class": "osztály",
+    "settings": "beállítások",
+    "grade": "jegy",
 
-const base_params = {
-  "desc": "No desc", 
-  "subject": "No subject", 
-  "grade": "No grade" 
+    // notifications
+    "grade_notification_msg": "{user} új értékelést kapott ({grade}) {subject} tantárgyból"
+  },
+  "EN": {
+    // general
+    "monday": "Monday",
+    "tuesday": "Tuesday",
+    "wednesday": "Wednesday",
+    "thursday": "Thrusday",
+    "friday": "Friday",
+    "saturday": "Saturday",
+    "sunday": "Sunday",
+    "class": "Class",
+    "settings": "Settings",
+    "grade": "Grade",
+
+    // notifications
+    "grade_notification_msg": "{user} got a new mark ({grade}) from {subject} class"
+  }
 }
 
-function translatedKey(key, params = base_params) {
-  let lang = getData["user_settings"]["language"]
-  let translation = languages[lang][key] || key; // fallback key
-  translation.replace("{user}", getData("student/name"))
-  translation.replace("{subject}", params["subject"])
-  translation.replace("{grade}", params["grade"])
-  translation.replace("{desc}", params["desc"])
+
+// functions
+import { getDataFromJson } from "./processed_data"
+
+const base_params = {
+  "{user}": getDataFromJson("student/name") || "No name",
+  "{desc}": "No desc", 
+  "{subject}": "No subject", 
+  "{grade}": "No grade"
+}
+
+// translates based on dictionary AND replaces params
+function translateKey(key, params = base_params) {
+  let lang = getDataFromJson("user_settings/language") || "EN";
+  let translation = translationDictonary[lang][key] || key; // fallback key
+  for (const key in base_params) {
+    translation = translation.replace(`{${params[key] || key}}`, params[key]); // if key deosnt exits in params
+  }
   return translation;
 }
 
-export { translatedKey };
+export { translateKey };

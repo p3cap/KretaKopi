@@ -528,7 +528,7 @@
     }
   },
   "user_settings": {
-		"language": "Hungarian",
+		"language": "HU",
 		"notifications": {
 			"grade_notifications": true,
 			"homework_notifications": true,

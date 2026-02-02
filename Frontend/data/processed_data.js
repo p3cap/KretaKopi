@@ -3,37 +3,46 @@ import userData from "./sample_userdata.json" assert { type: "json" };
 // returns data from json in the following format:
 // getData("grades/Subject-Id") => [{"grade":4...},{"grade":...}]
 function getDataFromJson(json_key) {
-	const path = json_key.split("/");
-	let data = userData;
+  const path = json_key.split("/");
+  let data = userData;
 
-	for (const key of path) {
-		data = data[key];
-		if (data === undefined) return undefined;
+  for (const key of path) {
+    data = data[key];
+    if (data === undefined) return undefined;
+  }
+
+  return data;
+}
+
+function editDataFromJson(json_key, value) {
+	const path = json_key.split("/")
+	let data = userData
+
+	for (let i = 0; i < path.length - 1; i++) {
+		data = data[path[i]]
+		if (data === undefined) return undefined
 	}
 
-	return data;
+	data[path[path.length - 1]] = value
 }
 
-// Returns a list of formatted notifiction massages between from_date and to_date
+
+// Returns a list of formatted notifiction massages with filtering (eg. date range)
 // from data entries: grades, homework, exams, omissions
-function getNotifyList(from_date, to_date) {
+function getNotifyList(filter = (e) => true) {
+  let includeData = [].concat(data["grades"], data["homework"], data["exams"], data["omissions"]);
   let msg_list = [];
-  for (let grd of data["grades"]) {
-    let grd_formated = {"date": grd["date"], "description": grd["description"]};
-    msg_list.push(grd_formated);
+  for (let item of includeData) {
+    let formatedItem = { //revise, seems useless
+      "date": item["date"],
+      "title": item["title"],
+      "desc": item["desc"],
+      "class": item["class"]
+    };
+    msg_list.push(formatedItem);
   }
-  for (let hwm of data["homework"]) {
-    let hwm_formated = {"date": hwm["date"], "description": hwm["description"]};
-    msg_list.push(hwm_formated);
-  }
-  for (let exm of data["exams"]) {
-    let exm_formated = {"date": exm["date"], "description": exm["description"]};
-    msg_list.push(exm_formated);
-  }
-  for (let oms of data["omissions"]) {
-    let oms_formated = {"date": oms["date"], "description": oms["description"]};
-    msg_list.push(oms_formated);
-  }
+
+  return msg_list.filter(filter);
 }
 
-export { getDataFromJson, getNotifyList };
+export { getDataFromJson, editDataFromJson, getNotifyList };
