@@ -1,0 +1,8 @@
+{
+  "Hungarian": {
+    "grade_notification_msg": "{user} új értékelést kapott ({grade}) {subject} tantárgyból"
+  },
+  "English": {
+    "grade_notification_msg": "{user} got a new mark ({grade}) from {subject} class"
+  }
+}

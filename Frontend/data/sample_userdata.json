@@ -1,0 +1,539 @@
+{
+  "calculated_averages": {
+    "overall_student_average": 4.42,
+    "student_subject_averages": {
+      "Biology-11a": 4,
+      "Chemistry-11a": 4,
+      "English-11a": 4.4,
+      "Ethics-11a": 5,
+      "Geography-11a": 4,
+      "Grammar-11a": 4,
+      "History-11a": 4.67,
+      "Informatics-11a": 5,
+      "Literature-11a": 4.66,
+      "Mathematics-11a-Advanced": 4.25,
+      "PhysicalEducation-11a": 5,
+      "Physics-11a": 3.5
+    }
+  },
+  "calculated_class_averages": {
+    "overall_class_average": 3.95,
+    "student_subject_averages": {
+      "Biology-11a": 3.89,
+      "Chemistry-11a": 4.1,
+      "English-11a": 4.1,
+      "Ethics-11a": 4.9,
+      "Geography-11a": 4,
+      "Grammar-11a": 4.4,
+      "History-11a": 3.27,
+      "Informatics-11a": 5,
+      "Literature-11a": 4.66,
+      "Mathematics-11a-Advanced": 4,
+      "PhysicalEducation-11a": 2.94,
+      "Physics-11a": 3.1
+    }
+  },
+  "classes": {
+    "Biology-11a": {
+      "subject": "Biology",
+      "teacher_ids": [
+        "1008"
+      ]
+    },
+    "Chemistry-11a": {
+      "subject": "Chemistry",
+      "teacher_ids": [
+        "1007"
+      ]
+    },
+    "English-11a": {
+      "subject": "English",
+      "teacher_ids": [
+        "1003"
+      ]
+    },
+    "Ethics-11a": {
+      "subject": "Ethics",
+      "teacher_ids": [
+        "1009"
+      ]
+    },
+    "Geography-11a": {
+      "subject": "Geography",
+      "teacher_ids": [
+        "1009"
+      ]
+    },
+    "Grammar-11a": {
+      "subject": "Grammar",
+      "teacher_ids": [
+        "1004"
+      ]
+    },
+    "History-11a": {
+      "subject": "History",
+      "teacher_ids": [
+        "1004"
+      ]
+    },
+    "Informatics-11a": {
+      "subject": "Informatics",
+      "teacher_ids": [
+        "1005"
+      ]
+    },
+    "Literature-11a": {
+      "subject": "Literature",
+      "teacher_ids": [
+        "1004"
+      ]
+    },
+    "Mathematics-11a-Advanced": {
+      "subject": "Mathematics",
+      "teacher_ids": [
+        "1001",
+        "1002"
+      ]
+    },
+    "PhysicalEducation-11a": {
+      "subject": "Physical Education",
+      "teacher_ids": [
+        "1010"
+      ]
+    },
+    "Physics-11a": {
+      "subject": "Physics",
+      "teacher_ids": [
+        "1006"
+      ]
+    }
+  },
+  "grades": {
+    "English-11a": [
+      {
+        "date": "2025-09-30",
+        "description": "Vocabulary test",
+        "grade": 4,
+        "viewed": false,
+        "weight": 100
+      },
+      {
+        "date": "2025-11-15",
+        "description": "Reading comprehension",
+        "grade": 5,
+        "viewed": false,
+        "weight": 100
+      },
+      {
+        "date": "2026-03-10",
+        "description": "Oral exam",
+        "grade": 5,
+        "viewed": false,
+        "weight": 100
+      },
+      {
+        "date": "2026-05-10",
+        "description": "Final exam",
+        "grade": 4,
+        "viewed": false,
+        "weight": 200
+      }
+    ],
+    "History-11a": [
+      {
+        "date": "2025-10-05",
+        "description": "Industrial Revolution Test",
+        "grade": 5,
+        "viewed": false,
+        "weight": 100
+      },
+      {
+        "date": "2026-02-12",
+        "description": "WWI Oral Presentation",
+        "grade": 4,
+        "viewed": false,
+        "weight": 100
+      },
+      {
+        "date": "2026-04-20",
+        "description": "Reform Era Quiz",
+        "grade": 5,
+        "viewed": false,
+        "weight": 100
+      }
+    ],
+    "Informatics-11a": [
+      {
+        "date": "2025-11-22",
+        "description": "Programming test",
+        "grade": 5,
+        "viewed": false,
+        "weight": 150
+      },
+      {
+        "date": "2026-04-15",
+        "description": "Project work",
+        "grade": 5,
+        "viewed": false,
+        "weight": 150
+      }
+    ],
+    "Literature-11a": [
+      {
+        "date": "2025-10-15",
+        "description": "Ady Endre poetry analysis",
+        "grade": 5,
+        "viewed": false,
+        "weight": 100
+      },
+      {
+        "date": "2026-01-12",
+        "description": "Realism essay",
+        "grade": 5,
+        "viewed": false,
+        "weight": 100
+      },
+      {
+        "date": "2026-05-05",
+        "description": "Drama test",
+        "grade": 4,
+        "viewed": false,
+        "weight": 100
+      }
+    ],
+    "Mathematics-11a-Advanced": [
+      {
+        "date": "2025-10-12",
+        "description": "Midterm exam",
+        "grade": 5,
+        "viewed": false,
+        "weight": 200
+      },
+      {
+        "date": "2026-01-20",
+        "description": "Written test",
+        "grade": 3,
+        "viewed": false,
+        "weight": 100
+      },
+      {
+        "date": "2026-05-18",
+        "description": "End of year test",
+        "grade": 4,
+        "viewed": false,
+        "weight": 100
+      }
+    ],
+    "PhysicalEducation-11a": [
+      {
+        "date": "2025-12-10",
+        "description": "Cooper test",
+        "grade": 5,
+        "viewed": false,
+        "weight": 100
+      },
+      {
+        "date": "2026-05-20",
+        "description": "Gymnastics",
+        "grade": 5,
+        "viewed": false,
+        "weight": 100
+      }
+    ],
+    "Physics-11a": [
+      {
+        "date": "2025-11-02",
+        "description": "Mechanics test",
+        "grade": 3,
+        "viewed": false,
+        "weight": 100
+      },
+      {
+        "date": "2026-03-22",
+        "description": "Thermodynamics test",
+        "grade": 4,
+        "viewed": false,
+        "weight": 100
+      }
+    ]
+  },
+  "homework": [
+    {
+      "assigned_date": "2025-09-20",
+      "class_id": "Mathematics-11a-Advanced",
+      "deadline": "2025-09-27",
+      "description": "Solve exercises 1–15 from the textbook"
+    },
+    {
+      "assigned_date": "2026-02-11",
+      "class_id": "English-11a",
+      "deadline": "2026-02-18",
+      "description": "Write a 250-word essay about technology"
+    },
+    {
+      "assigned_date": "2026-04-05",
+      "class_id": "History-11a",
+      "deadline": "2026-04-12",
+      "description": "Research the causes of the 1848 revolution"
+    },
+    {
+      "assigned_date": "2025-11-10",
+      "class_id": "Physics-11a",
+      "deadline": "2025-11-17",
+      "description": "Complete the lab report on pendulums"
+    }
+  ],
+  "omissions": [
+    {
+      "class_id": "Mathematics-11a-Advanced",
+      "date": "2025-10-14",
+      "is_justified": true,
+      "justification_type": "medical",
+      "teacher_id": "1001"
+    },
+    {
+      "class_id": "Physics-11a",
+      "date": "2025-12-02",
+      "is_justified": false,
+      "justification_type": null,
+      "teacher_id": "1006",
+      "viewed": false
+    },
+    {
+      "class_id": "English-11a",
+      "date": "2026-03-04",
+      "is_justified": true,
+      "justification_type": "family",
+      "teacher_id": "1003",
+      "viewed": false
+    },
+    {
+      "class_id": "PhysicalEducation-11a",
+      "date": "2026-05-12",
+      "is_justified": true,
+      "justification_type": "medical",
+      "teacher_id": "1010",
+      "viewed": false
+    }
+  ],
+  "student": {
+    "class": "11a",
+    "id": "72736391591",
+    "name": "Példa Pál",
+    "school": {
+      "id": "bgszc_kkk",
+      "name": "BGSZC Kiváló Kótya Kálmán Idegennyelvi Szakgimnáziuma és Kollégium"
+    }
+  },
+  "teachers": {
+    "1001": {
+      "name": "Kovács Katalin"
+    },
+    "1002": {
+      "name": "Nagy Norbert"
+    },
+    "1003": {
+      "name": "Szabó Ádám"
+    },
+    "1004": {
+      "name": "Tóth Erika"
+    },
+    "1005": {
+      "name": "Varga Péter"
+    },
+    "1006": {
+      "name": "Farkas László"
+    },
+    "1007": {
+      "name": "Kiss Anna"
+    },
+    "1008": {
+      "name": "Horváth Gábor"
+    },
+    "1009": {
+      "name": "Molnár Júlia"
+    },
+    "1010": {
+      "name": "Balogh Zoltán"
+    }
+  },
+  "timetable": {
+    "Friday": [
+      {
+        "class_id": "Literature-11a",
+        "end_time": "08:45",
+        "room": "210",
+        "start_time": "08:00",
+        "teacher_id": "1004"
+      },
+      {
+        "class_id": "Ethics-11a",
+        "end_time": "09:45",
+        "room": "112",
+        "start_time": "09:00",
+        "teacher_id": "1009"
+      },
+      {
+        "class_id": "English-11a",
+        "end_time": "10:45",
+        "room": "105",
+        "start_time": "10:00",
+        "teacher_id": "1003"
+      }
+    ],
+    "Monday": [
+      {
+        "class_id": "Mathematics-11a-Advanced",
+        "end_time": "08:45",
+        "room": "201",
+        "start_time": "08:00",
+        "teacher_id": "1001"
+      },
+      {
+        "class_id": "English-11a",
+        "end_time": "09:45",
+        "room": "105",
+        "start_time": "09:00",
+        "teacher_id": "1003"
+      },
+      {
+        "class_id": "History-11a",
+        "end_time": "10:45",
+        "room": "210",
+        "start_time": "10:00",
+        "teacher_id": "1004"
+      },
+      {
+        "class_id": "Physics-11a",
+        "end_time": "11:45",
+        "room": "302",
+        "start_time": "11:00",
+        "teacher_id": "1006"
+      },
+      {
+        "class_id": "Informatics-11a",
+        "end_time": "12:45",
+        "room": "Lab1",
+        "start_time": "12:00",
+        "teacher_id": "1005"
+      }
+    ],
+    "saturday": [],
+    "sunday": [],
+    "Thursday": [
+      {
+        "class_id": "Grammar-11a",
+        "end_time": "08:45",
+        "room": "210",
+        "start_time": "08:00",
+        "teacher_id": "1004"
+      },
+      {
+        "class_id": "History-11a",
+        "end_time": "09:45",
+        "room": "210",
+        "start_time": "09:00",
+        "teacher_id": "1004"
+      },
+      {
+        "class_id": "Physics-11a",
+        "end_time": "10:45",
+        "room": "302",
+        "start_time": "10:00",
+        "teacher_id": "1006"
+      },
+      {
+        "class_id": "Informatics-11a",
+        "end_time": "12:45",
+        "room": "Lab1",
+        "start_time": "11:00",
+        "teacher_id": "1005"
+      }
+    ],
+    "Tuesday": [
+      {
+        "class_id": "Literature-11a",
+        "end_time": "08:45",
+        "room": "210",
+        "start_time": "08:00",
+        "teacher_id": "1004"
+      },
+      {
+        "class_id": "Mathematics-11a-Advanced",
+        "end_time": "09:45",
+        "room": "201",
+        "start_time": "09:00",
+        "teacher_id": "1001"
+      },
+      {
+        "class_id": "Chemistry-11a",
+        "end_time": "10:45",
+        "room": "305",
+        "start_time": "10:00",
+        "teacher_id": "1007"
+      },
+      {
+        "class_id": "Biology-11a",
+        "end_time": "11:45",
+        "room": "308",
+        "start_time": "11:00",
+        "teacher_id": "1008"
+      }
+    ],
+    "Wednesday": [
+      {
+        "class_id": "English-11a",
+        "end_time": "08:45",
+        "room": "105",
+        "start_time": "08:00",
+        "teacher_id": "1003"
+      },
+      {
+        "class_id": "Geography-11a",
+        "end_time": "09:45",
+        "room": "112",
+        "start_time": "09:00",
+        "teacher_id": "1009"
+      },
+      {
+        "class_id": "Mathematics-11a-Advanced",
+        "end_time": "10:45",
+        "room": "201",
+        "start_time": "10:00",
+        "teacher_id": "1002"
+      },
+      {
+        "class_id": "PhysicalEducation-11a",
+        "end_time": "12:45",
+        "room": "Gym",
+        "start_time": "11:00",
+        "teacher_id": "1010"
+      }
+    ]
+  },
+  "massages": {
+    "12345": {
+      "date": "2025-12-01",
+      "teacher_id": "1003",
+      "title": "English Competition",
+      "message": "Sign up for this weekend's English competition in the main hall.",
+      "viewed": false
+    },
+    "67891": {
+      "date": "2026-10-01",
+      "teacher_id": "1003",
+      "title": "English Competition",
+      "message": "Fuck yall, no-one signed up fro the English competition.",
+      "viewed": false
+    }
+  },
+  "user_settings": {
+		"language": "Hungarian",
+		"notifications": {
+			"grade_notifications": true,
+			"homework_notifications": true,
+			"exam_notifications": true,
+			"message_notifications": true
+	  }
+  }
+}

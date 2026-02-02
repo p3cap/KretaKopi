@@ -24,7 +24,7 @@
 
 	"timetable": {
 		"NotADay": [
-			{ "class_id": null, "room": 404, "teacher_id": "9999", "start_time": "25:00", "end_time": "08:00" }
+			{ "class_id": null, "room": 404, "teacher_id": 99999, "start_time": "25:00", "end_time": "08:00" }
 		],
 		"Monday": "Should be an array but I am a string"
 	},
