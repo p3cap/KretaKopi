@@ -1,20 +1,23 @@
-<script setup>
+<script setup lang="js">
 import { ref } from "vue"
-import { editDataFromJson as editJson } from "@/data/processed_data"
+import { writeData, getData } from "@/data/data"
+import { translateKey as t } from "@/data/translate.js"
 
-const isHU = ref(true)
+const isHU = ref(getData("user_settings/language") === "HU")
 
 function changeLang() {
 	const lang = isHU.value ? "HU" : "EN"
-	editJson("user_settings/language", lang)
+	writeData("user_settings/language", lang)
+	isHU = lang === "HU"
+	location.reload() // reload site
 }
 </script>
 
 <template>
-	<h1>settings</h1>
+	<h1>{{ t("settings") }}</h1>
 
 	<p>lang test</p>
 
 	<input type="checkbox" v-model="isHU" @change="changeLang" />
-	<p>{{ isHU ? "HU" : "EN" }}</p>
+	<p>{{ isHU ? "EN" : "HU" }}</p>
 </template>

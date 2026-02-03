@@ -2,7 +2,7 @@ import userData from "./sample_userdata.json" assert { type: "json" };
 
 // returns data from json in the following format:
 // getData("grades/Subject-Id") => [{"grade":4...},{"grade":...}]
-function getDataFromJson(json_key) {
+function getData(json_key) {
   const path = json_key.split("/");
   let data = userData;
 
@@ -14,7 +14,7 @@ function getDataFromJson(json_key) {
   return data;
 }
 
-function editDataFromJson(json_key, value) {
+function writeData(json_key, value) {
 	const path = json_key.split("/")
 	let data = userData
 
@@ -45,4 +45,4 @@ function getNotifyList(filter = (e) => true) {
   return msg_list.filter(filter);
 }
 
-export { getDataFromJson, editDataFromJson, getNotifyList };
+export { getData, writeData, getNotifyList };
