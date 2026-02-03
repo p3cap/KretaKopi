@@ -8,8 +8,8 @@
     --Iron-Grey: #45505A;
     --Gunmetal: #303A43;
     --Carbon-Black: #1D252C;
-    --Primary: #FF1313;
-    --Secondary: #FF4141;
+    --Primary: hsl(0, 100%, 30%);
+    --Secondary: hsl(0, 100%, 40%);
 }
 
 *,

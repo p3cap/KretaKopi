@@ -7,7 +7,7 @@
     <div class="lesson-card">
         <p class="lesson-name">Történelem</p>
         <p class="lesson-teacher">Sós Ferenc</p>
-        <p class="lesson-time">8:00-9:00</p>
+        <p class="lesson-time">8:00 - 9:00</p>
     </div>
 
 </template>
@@ -25,7 +25,7 @@
             position: absolute;
             height: 1.5rem;
             width: 4px;
-            background-color: var(--Primary);
+            background-color: var(--Secondary);
             left: -1px;
             top: 50%;
             translate: 0 -50%;

@@ -14,6 +14,16 @@ function right() {
 
 }
 
+import { reactive } from 'vue';
+
+// const isActive = ref(true)
+const lista = reactive({'Mo': true, 'Tu': false, 'We': false, 'Th': false, 'Fr': false, 'Sa': false, 'Su': false})
+
+function setActive(key) {
+  Object.keys(lista).forEach(k => (lista[k] = false))
+  lista[key] = true
+}
+
 </script>
 
 <template>
@@ -22,35 +32,35 @@ function right() {
         <p class="week">Január 01-07.</p>
         <button class="week-switch right" @click="right">></button>
         <ul>
-            <li>
-                <p>{{ t("monday").slice(0,2) }}</p>
+            <li @click="setActive('Mo')" :class="{ active: lista.Mo }">
+                <p @click="">{{ t("monday").slice(0,2) }}</p>
                 <!-- 
                 Pl fordítás: "monday" kulcs és csak az első 2 betűt mutassa 
                 fordítás hozzáadása a data/translate.js fájlban
                 -->
                 <p>6</p>
             </li>
-            <li>
+            <li @click="setActive('Tu')" :class="{ active: lista.Tu }">
                 <p>{{ t("tuesday").slice(0,2) }}</p>
                 <p>31</p>
             </li>
-            <li>
+            <li @click="setActive('We')" :class="{ active: lista.We }">
                 <p>{{ t("wednesday").slice(0,2) }}</p>
                 <p>13</p>
             </li>
-            <li>
+            <li @click="setActive('Th')" :class="{ active: lista.Th }">
                 <p>{{ t("thursday").slice(0,2) }}</p>
                 <p>0</p>
             </li>
-            <li>
+            <li @click="setActive('Fr')" :class="{ active: lista.Fr }">
                 <p>{{ t("friday").slice(0,2) }}</p>
                 <p>0</p>
             </li>
-            <li>
+            <li @click="setActive('Sa')" :class="{ active: lista.Sa }">
                 <p>{{ t("saturday").slice(0,2) }}</p>
                 <p>0</p>
             </li>
-            <li>
+            <li @click="setActive('Su')" :class="{ active: lista.Su }">
                 <p>{{ t("sunday").slice(0,2) }}</p>
                 <p>0</p>
             </li>
@@ -121,9 +131,24 @@ function right() {
             width: 2.25rem;
             border-radius: 1rem;
             padding: 5px 10px;
-            border: 2px solid var(--Slate-Grey);
+            border: 2px solid var(--Pale-Slate2);
+            cursor: pointer;
+            transition: all 0.25s ease;
+
             p:nth-of-type(2n) {
+                transition: all 0.25s ease;
                 color: var(--Slate-Grey);
+            }
+        }
+        .active {
+            background-color: var(--Secondary);
+            border-color: var(--Secondary);
+            color: var(--Bright-Snow);
+            box-shadow: 0px 0px 15px -5px var(--Secondary);
+            text-shadow: 0px 0px 2px white;
+
+            p:nth-of-type(2n) {
+                color: var(--Bright-Snow);
             }
         }
     }

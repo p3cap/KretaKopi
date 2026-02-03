@@ -2,28 +2,24 @@
 import { ref, watch } from 'vue'
 
 const open = ref(false)
-const close = () => {
-    open.value = false
-}
+
 </script>
 <template>
-    <button class="profile-btn" @click="open = true">profile</button>
+    <button class="profile-btn" :class="{'is-active': open}" @click="open=!open" >profile</button>
     <Teleport to="body">
         <transition name="overlay">
             <div v-if="open" class="overlay">
-                <transition name="sheet">
-                    <div class="sheet">
-                        <div class="handle"></div>
-                            <h2>Profil</h2>
-                            <p>
-                                fas
-                            </p>
-                            <p>
-                                fas
-                            </p>
-                            <button class="close-btn" @click="close">Bezárás</button>
-                        </div>
-                </transition>
+                <div class="sheet">
+                    <div class="profile-data">
+                        <h2>Profil</h2>
+                        <p>
+                            fas
+                        </p>
+                        <p>
+                            fas
+                        </p>
+                    </div>
+                </div>
             </div>
         </transition>
     </Teleport>
@@ -31,22 +27,38 @@ const close = () => {
 <style scoped>
     .profile-btn{
         cursor: pointer;
+        z-index: 1000;
+        position: fixed;
+        right: 20px;
+        top: 20px;
+        
+
     }
     .overlay{
         position: fixed;
-        width: 80vw;
-        height: 80vh;
-        background: rgba(0,0,0,0.35);
-        backdrop-filter: blur(10px);
+        inset: 0;
         z-index: 999;
         display: flex;
         align-items: center;
         justify-content: center;
+        backdrop-filter: blur(3px);
     }
-    .handle{
-        background-color: black;
-        width: 20%;
-        height: 20%;
+    .sheet{
+        background-color: rgb(0, 0, 0,0.35);
+        width: 80vw;
+        height: 80vh;
+        border-radius: 16px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
     }
+    .overlay-enter-active, .overlay-leave-active {
+        transition: all 0.6s ease;
+    }
+    .overlay-enter-from, .overlay-leave-to {
+        opacity: 0;
+    }
+    
 
 </style>

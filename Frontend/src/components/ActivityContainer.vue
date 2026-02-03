@@ -1,13 +1,20 @@
-<script setup>
+<script setup lang="js">
 import Activity from "../components/Activity.vue";
+import { translateKey as t } from "@/data/translate.js";
 </script>
 
 <template>
-<h1>Ma</h1>
-<Activity />
-<Activity />
-<Activity />
-<Activity />
+  <div class="activity-container">
+    <h1>{{ t('today') }}</h1>
+    <Activity />
+    <Activity />
+    <Activity />
+    <Activity />
+    <Activity />
+    <Activity />
+    <Activity />
+    <Activity />
+  </div>
 </template>
 
 <style scoped>

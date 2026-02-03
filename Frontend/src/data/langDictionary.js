@@ -210,5 +210,13 @@ export default {
   "test": {
     "EN": "test",
     "HU": "teszt"
+  },
+  "today": {
+    "EN": "Today",
+    "HU": "Ma"
+  },
+  "yesterday": {
+    "EN": "Yesterday",
+    "HU": "Tegnap"
   }
 }

@@ -54,7 +54,7 @@ function setActive(key) {
         left: 50%;
         translate: -50% 0;
         width: 90vw;
-        height: 8vh;
+        height: 4rem;
         background-color: var(--Bright-Snow);
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;
         border-radius: 1.75rem;
