@@ -23,10 +23,10 @@
         &::before {
             content: '';
             position: absolute;
-            height: 1rem;
+            height: 1.5rem;
             width: 4px;
             background-color: var(--Primary);
-            left: -0.5px;
+            left: -1px;
             top: 50%;
             translate: 0 -50%;
             border-radius: 3rem;

@@ -121,9 +121,9 @@ function right() {
             width: 2.25rem;
             border-radius: 1rem;
             padding: 5px 10px;
-            border: 2px solid var(--Pale-Slate2);
+            border: 2px solid var(--Slate-Grey);
             p:nth-of-type(2n) {
-                color: var(--Pale-Slate2);
+                color: var(--Slate-Grey);
             }
         }
     }
