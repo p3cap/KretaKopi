@@ -45,28 +45,25 @@ import Navbar from "../components/Navbar.vue";
 </template>
 
 <style scoped>
-    #days {
-        margin-top: 4rem;
-    }
     ul {
         list-style: none;
         display: flex;
         justify-content: space-evenly;
-        width: 100vw;
-        padding: 0 0.5rem;
+        width: 100%;
     }
     #days li {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: 2.5rem;
+        font-size: 0.75rem;
+        width: fit-content;
         border-radius: 1rem;
-        padding: 10px min(5vw, 2rem);
-        background-color: rgba(185, 185, 185, 0.354);
+        padding: 5px 10px;
         backdrop-filter: blur(3.6px);
-        border: 1px solid hsl(0, 0%, 100%, 0.5);
-        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-
+        border: 2px solid var(--Pale-Slate2);
+        p:nth-of-type(2n) {
+            color: var(--Pale-Slate2);
+        }
     }
 </style>

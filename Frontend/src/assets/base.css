@@ -1,3 +1,17 @@
+:root {
+    --Bright-Snow: #F4F9FD;
+    --Platinum: #E5ECF2;
+    --Alabaster-Grey: #DAE2E9;
+    --Pale-Slate: #CAD4DD;
+    --Pale-Slate2: #A9B5C1;
+    --Slate-Grey: #687581;
+    --Iron-Grey: #45505A;
+    --Gunmetal: #303A43;
+    --Carbon-Black: #1D252C;
+    --Primary: #FF1313;
+    --Secondary: #FF4141;
+}
+
 *,
 *::before,
 *::after {

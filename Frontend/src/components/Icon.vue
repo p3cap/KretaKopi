@@ -14,7 +14,6 @@
         position: fixed;
         left: 0.5rem;
         top: 0.5rem;
-        fill: #FF6B6B;
-        filter: drop-shadow(0px 0px 5px black);
+        fill: var(--Carbon-Black);
     }
 </style>

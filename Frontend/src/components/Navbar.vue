@@ -55,9 +55,9 @@ function setActive(key) {
         translate: -50% 0;
         width: 90vw;
         height: 8vh;
-        background-color: rgba(185, 185, 185, 0.354);
+        background-color: var(--Alabaster-Grey);
         backdrop-filter: blur(3.6px);
-        border: 1px solid hsl(0, 0%, 100%, 0.5);
+        border: 1px solid var(--Platinum);
         box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
         border-radius: 1.75rem;
 
@@ -77,7 +77,7 @@ function setActive(key) {
             box-sizing: content-box;
             height: 30px;
             width: 30px;
-            color: hsl(0 0 20%);
+            color: var(--Carbon-Black);
             transition: all 0.25s ease;
             padding: 7.5px;
             border-radius: 1.25rem;
@@ -86,8 +86,8 @@ function setActive(key) {
     }
     .active svg {
         box-sizing: content-box;
-        background-color: hsl(0, 0%, 20%);
+        background-color: var(--Carbon-Black);
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-        color: white;
+        color: var(--Bright-Snow);
     }
 </style>
