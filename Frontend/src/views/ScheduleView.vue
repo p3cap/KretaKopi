@@ -7,12 +7,20 @@ import { ref } from "vue";
 
 const currentDay = ref('monday');
 
+function left() {
+
+}
+function right() {
+
+}
+
 </script>
 
 <template>
     <div id="days">
-        <button class="week-switch left"><</button>
-        <button class="week-switch right">></button>
+        <button class="week-switch left" @click="left"><</button>
+        <p class="week">Január 01-07.</p>
+        <button class="week-switch right" @click="right">></button>
         <ul>
             <li>
                 <p>{{ t("monday").slice(0,2) }}</p>
@@ -87,12 +95,22 @@ const currentDay = ref('monday');
             position: absolute;
             top: 0.5rem;
             line-height: 1;
+            cursor: pointer;
         }
         .left {
             left: 1.5rem;
         }
         .right {
             right: 1.5rem;
+        }
+        .week {
+            position: absolute;
+            top: 0.75rem;
+            line-height: 1;
+            text-align: center;
+            font-size: 1rem;
+            left: 50%;
+            translate: -50% 0;
         }
         li {
             display: flex;

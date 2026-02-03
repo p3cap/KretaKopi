@@ -1,11 +1,9 @@
-<script>
-
-import NewActivity from "../components/NewActivity.vue";
+<script setup>
+import ActivityContainer from "../components/ActivityContainer.vue";
 </script>
 
 <template>
-    <h1>asd</h1>
-    <NewActivity />
+<ActivityContainer />
 </template>
 
 <style scoped>
