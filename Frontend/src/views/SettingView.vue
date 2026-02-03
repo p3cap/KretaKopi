@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from "vue"
-import { editDataFromJson as editJson } from "@/../data/processed_data"
+import { editDataFromJson as editJson } from "@/data/processed_data"
 
 const isHU = ref(true)
 

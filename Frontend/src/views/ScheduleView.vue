@@ -1,6 +1,6 @@
 <script setup lang="js">
 //translation
-import { translateKey as t } from "@/../data/translate.js";
+import { translateKey as t } from "@/data/translate.js";
 
 import Navbar from "../components/Navbar.vue";
 </script>
