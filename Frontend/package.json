@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:lang": "concurrently \"node src/data/langEditor/server.js\" \"vite --open editor.html\"",
     "build": "vite build",
     "preview": "vite preview",
     "format": "prettier --write --experimental-cli src/"
@@ -16,6 +17,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^6.0.3",
+    "concurrently": "^8.2.2",
     "prettier": "3.8.1",
     "vite": "beta",
     "vite-plugin-vue-devtools": "^8.0.5"

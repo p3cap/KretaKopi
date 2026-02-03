@@ -1,4 +1,4 @@
-import userData from "./sample_userdata.json" assert { type: "json" };
+import userData from "./TestData/sample_userdata.json" assert { type: "json" };
 
 // returns data from json in the following format:
 // getData("grades/Subject-Id") => [{"grade":4...},{"grade":...}]

@@ -12,9 +12,10 @@ const baseDynamicTexts = {
 }
 
 // translates based on dictionary AND replaces placeholders
+// usage: translateKey('settings', {"{desc}": "Hablablablablublublubhablublublbublbululu"})
 function translateKey(translationKey, dynamicTexts = baseDynamicTexts) {
   const lang = getData('user_settings/language')
-  let translation = translationDictonary[lang][translationKey] || translationKey
+  let translation = translationDictonary[translationKey][lang] || translationKey
   for (const placeholder in baseDynamicTexts) {
     // replace placeholders
     translation = translation.replace(
@@ -26,4 +27,4 @@ function translateKey(translationKey, dynamicTexts = baseDynamicTexts) {
   return translation
 }
 
-export { translateKey }
+export { translateKey, baseDynamicTexts }
