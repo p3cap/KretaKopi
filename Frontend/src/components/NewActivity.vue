@@ -3,13 +3,12 @@
 </script>
 
 <template>
-    <h1>grades
-    </h1>
-    
 
+<div id="day">
+    <h1>Ma</h1>
+</div>
 
 </template>
 <style scoped>
-
 
 </style>
