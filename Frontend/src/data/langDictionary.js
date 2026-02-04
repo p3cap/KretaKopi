@@ -1,222 +1,277 @@
 export default {
   "monday": {
     "HU": "Hétfő",
-    "EN": "Monday"
+    "EN": "Monday",
+    "RO": ""
   },
   "tuesday": {
     "HU": "Kedd",
-    "EN": "Tuesday"
+    "EN": "Tuesday",
+    "RO": ""
   },
   "wednesday": {
     "HU": "Szerda",
-    "EN": "Wednesday"
+    "EN": "Wednesday",
+    "RO": ""
   },
   "thursday": {
     "HU": "Csütörtök",
-    "EN": "Thursday"
+    "EN": "Thursday",
+    "RO": ""
   },
   "friday": {
     "HU": "Péntek",
-    "EN": "Friday"
+    "EN": "Friday",
+    "RO": ""
   },
   "saturday": {
     "HU": "Szombat",
-    "EN": "Saturday"
+    "EN": "Saturday",
+    "RO": ""
   },
   "sunday": {
     "HU": "Vasárnap",
-    "EN": "Sunday"
+    "EN": "Sunday",
+    "RO": ""
   },
   "january": {
     "HU": "Január",
-    "EN": "January"
+    "EN": "January",
+    "RO": ""
   },
   "february": {
     "HU": "Február",
-    "EN": "February"
+    "EN": "February",
+    "RO": ""
   },
   "march": {
     "HU": "Március",
-    "EN": "March"
+    "EN": "March",
+    "RO": ""
   },
   "april": {
     "HU": "Április",
-    "EN": "April"
+    "EN": "April",
+    "RO": ""
   },
   "may": {
     "HU": "Május",
-    "EN": "May"
+    "EN": "May",
+    "RO": ""
   },
   "june": {
     "HU": "Június",
-    "EN": "June"
+    "EN": "June",
+    "RO": ""
   },
   "july": {
     "HU": "Július",
-    "EN": "July"
+    "EN": "July",
+    "RO": ""
   },
   "august": {
     "HU": "Augusztus",
-    "EN": "August"
+    "EN": "August",
+    "RO": ""
   },
   "september": {
     "HU": "Szeptember",
-    "EN": "September"
+    "EN": "September",
+    "RO": ""
   },
   "october": {
     "HU": "Október",
-    "EN": "October"
+    "EN": "October",
+    "RO": ""
   },
   "november": {
     "HU": "November",
-    "EN": "November"
+    "EN": "November",
+    "RO": ""
   },
   "december": {
     "HU": "December",
-    "EN": "December"
+    "EN": "December",
+    "RO": ""
   },
   "class": {
     "HU": "Osztály",
-    "EN": "Class"
+    "EN": "Class",
+    "RO": ""
   },
   "grade": {
     "HU": "Jegy",
-    "EN": "Grade"
+    "EN": "Grade",
+    "RO": ""
   },
   "subject": {
     "HU": "Tantárgy",
-    "EN": "Subject"
+    "EN": "Subject",
+    "RO": ""
   },
   "teacher": {
     "HU": "Tanár",
-    "EN": "Teacher"
+    "EN": "Teacher",
+    "RO": ""
   },
   "student": {
     "HU": "Diák",
-    "EN": "Student"
+    "EN": "Student",
+    "RO": ""
   },
   "timetable": {
     "HU": "Órarend",
-    "EN": "Timetable"
+    "EN": "Timetable",
+    "RO": ""
   },
   "evaluations": {
     "HU": "Értékelések",
-    "EN": "Evaluations"
+    "EN": "Evaluations",
+    "RO": ""
   },
   "omissions": {
     "HU": "Hiányzások",
-    "EN": "Omissions"
+    "EN": "Omissions",
+    "RO": ""
   },
   "room": {
     "HU": "Terem",
-    "EN": "Room"
+    "EN": "Room",
+    "RO": ""
   },
   "absence": {
     "HU": "Hiányzás",
-    "EN": "Absence"
+    "EN": "Absence",
+    "RO": ""
   },
   "semester": {
     "HU": "Félév",
-    "EN": "Semester"
+    "EN": "Semester",
+    "RO": ""
   },
   "exam": {
     "HU": "Dolgozat",
-    "EN": "Exam"
+    "EN": "Exam",
+    "RO": ""
   },
   "homework": {
     "HU": "Házi feladat",
-    "EN": "Homework"
+    "EN": "Homework",
+    "RO": ""
   },
   "settings": {
     "HU": "Beállítások",
-    "EN": "Settings"
+    "EN": "Settings",
+    "RO": ""
   },
   "save": {
     "HU": "Mentés",
-    "EN": "Save"
+    "EN": "Save",
+    "RO": ""
   },
   "cancel": {
     "HU": "Mégse",
-    "EN": "Cancel"
+    "EN": "Cancel",
+    "RO": ""
   },
   "edit": {
     "HU": "Szerkesztés",
-    "EN": "Edit"
+    "EN": "Edit",
+    "RO": ""
   },
   "delete": {
     "HU": "Törlés",
-    "EN": "Delete"
+    "EN": "Delete",
+    "RO": ""
   },
   "close": {
     "HU": "Bezárás",
-    "EN": "Close"
+    "EN": "Close",
+    "RO": ""
   },
   "loading": {
     "HU": "Betöltés...",
-    "EN": "Loading..."
+    "EN": "Loading...",
+    "RO": ""
   },
   "error": {
     "HU": "Hiba",
-    "EN": "Error"
+    "EN": "Error",
+    "RO": ""
   },
   "success": {
     "HU": "Siker",
-    "EN": "Success"
+    "EN": "Success",
+    "RO": ""
   },
   "home_page": {
     "HU": "Kezdőlap",
-    "EN": "Home Page"
+    "EN": "Home Page",
+    "RO": ""
   },
   "profile": {
     "HU": "Profil",
-    "EN": "Profile"
+    "EN": "Profile",
+    "RO": ""
   },
   "logout": {
     "HU": "Kijelentkezés",
-    "EN": "Logout"
+    "EN": "Logout",
+    "RO": ""
   },
   "mark_1": {
     "HU": "Elégséges",
-    "EN": "Failing"
+    "EN": "Failing",
+    "RO": ""
   },
   "mark_2": {
     "HU": "Elégséges",
-    "EN": "Sufficient"
+    "EN": "Sufficient",
+    "RO": ""
   },
   "mark_3": {
     "HU": "Közepes",
-    "EN": "Average"
+    "EN": "Average",
+    "RO": ""
   },
   "mark_4": {
     "HU": "Jó",
-    "EN": "Good"
+    "EN": "Good",
+    "RO": ""
   },
   "mark_5": {
     "HU": "Jeles",
-    "EN": "Excellent"
+    "EN": "Excellent",
+    "RO": ""
   },
   "normal_mark": {
     "HU": "Normál jegy",
-    "EN": "Normal Mark"
+    "EN": "Normal Mark",
+    "RO": ""
   },
   "grade_notification_msg": {
     "HU": "{user} új értékelést kapott ({grade}) {subject} tantárgyból",
-    "EN": "{user} got a new mark ({grade}) from {subject} class"
+    "EN": "{user} got a new mark ({grade}) from {subject} class",
+    "RO": ""
   },
   "app_title": {
     "HU": "KrétaKopi",
-    "EN": "ChalkCopi"
+    "EN": "ChalkCopi",
+    "RO": ""
   },
   "test": {
     "EN": "test",
-    "HU": "teszt"
+    "HU": "teszt",
+    "RO": ""
   },
   "today": {
     "EN": "Today",
-    "HU": "Ma"
+    "HU": "Ma",
+    "RO": ""
   },
   "yesterday": {
     "EN": "Yesterday",
-    "HU": "Tegnap"
+    "HU": "Tegnap",
+    "RO": ""
   }
 }
