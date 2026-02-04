@@ -2,6 +2,9 @@
 import { ref, watch } from 'vue'
 
 const open = ref(false)
+watch(open, (val) => {
+  document.body.style.overflow = val ? 'hidden' : ''
+})
 
 </script>
 <template>
@@ -9,17 +12,19 @@ const open = ref(false)
     <Teleport to="body">
         <transition name="overlay">
             <div v-if="open" class="overlay">
-                <div class="sheet">
-                    <div class="profile-data">
-                        <h2>Profil</h2>
-                        <p>
-                            fas
-                        </p>
-                        <p>
-                            fas
-                        </p>
+                <transition name="sheet">
+                    <div class="sheet">
+                        <div class="profile-data">
+                            <h2>Profil</h2>
+                            <p>
+                                fas
+                            </p>
+                            <p>
+                                fas
+                            </p>
+                        </div>
                     </div>
-                </div>
+                </transition>
             </div>
         </transition>
     </Teleport>
@@ -31,7 +36,6 @@ const open = ref(false)
         position: fixed;
         right: 20px;
         top: 20px;
-        
 
     }
     .overlay{
@@ -39,26 +43,28 @@ const open = ref(false)
         inset: 0;
         z-index: 999;
         display: flex;
-        align-items: center;
+        align-items: end;
         justify-content: center;
         backdrop-filter: blur(3px);
     }
     .sheet{
         background-color: rgb(0, 0, 0,0.35);
-        width: 80vw;
-        height: 80vh;
-        border-radius: 16px;
+        width: 100vw;
+        height: 70vh;
+        border-radius: 16px 16px 0px 0px;
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: center;
+        
     }
     .overlay-enter-active, .overlay-leave-active {
         transition: all 0.6s ease;
+        transition: all translatey(100%);
+        
     }
     .overlay-enter-from, .overlay-leave-to {
         opacity: 0;
     }
-    
 
 </style>
