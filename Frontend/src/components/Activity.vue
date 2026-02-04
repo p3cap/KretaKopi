@@ -15,22 +15,29 @@ const isPopupOpen = ref(false);
     </div>
 </div>
 
-<div v-if="isPopupOpen" class="popup" @click="isPopupOpen = false">
-    <div class="inner_window" @click.stop>
-        <h2>Történelem</h2>
-        <div class="inner_inner_window">
-            <h2>Írásbeli témazáró dolgozat</h2>
+<Transition name="fade">
+    <div v-if="isPopupOpen" class="popup" @click="isPopupOpen = false">
+        <div class="inner_window" @click.stop>
+            <h2>Történelem</h2>
             <hr>
-            <p>A nagy háború</p>
-            <p id="date">2026. február 4., szerda (4. óra)</p>
+            <div class="inner_inner_window">
+                <h2>Írásbeli témazáró dolgozat</h2>
+                <p>A nagy háború</p>
+                <p id="date">2026. február 4., szerda (4. óra)</p>
+            </div>
+
+            <div @click="isPopupOpen = false" class="buttonshi">
+                <p>Bezárás</p>
+            </div>
         </div>
     </div>
-</div>
+</Transition>
 
 </template>
 
 <style scoped>
 .container {
+    cursor: pointer;
     display: flex;
     align-items: center;
     gap: 15px;
@@ -93,25 +100,22 @@ div p {
     display: flex;
     flex-direction: column;
 }
+.inner_window h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    align-self: center;
+    margin-bottom: 2px;
+}
 .inner_inner_window {
     margin-top: 0.5rem;
     align-self: center;
-    color: var(--Bright-Snow);
     border-radius: 0.5rem;
     padding: 0.5rem;
     height: 600px;
     width: 90%;
-
-    background: rgba(73, 73, 73, 0.603);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(9.1px);
-    -webkit-backdrop-filter: blur(9.1px);
-    border: 1px solid rgba(255, 255, 255, 0.28);
 }
 .inner_inner_window hr {
-    width: 67%;
-    color: var(--Bright-Snow);
+    color: black;
     margin-top: 0.3rem;
     margin-bottom: 0.3rem;
 }
@@ -120,5 +124,26 @@ div p {
 }
 #date {
     align-self: flex-end;
+}
+.fade-enter-active, .fade-leave-active {
+  transition: ease opacity 0.2s;
+}
+.fade-enter-from, .fade-leave-to {
+  opacity: 0;
+}
+.buttonshi {
+    align-self: flex-end;
+    color: var(--Bright-Snow);
+    margin-top: auto;
+    background-color: var(--Bright-Red);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    cursor: pointer;
+    width: 30%;
+    transition: 0.1s;
+}
+.buttonshi:hover {
+    background-color: var(--Primary);
 }
 </style>
