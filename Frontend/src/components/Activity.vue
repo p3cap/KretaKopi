@@ -74,7 +74,7 @@ div p {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(110, 110, 110, 0.5);
+    background-color: #303A4355;
     backdrop-filter: blur(5px);
     display: flex;
     justify-content: center;
@@ -86,12 +86,12 @@ div p {
     text-align: left;
     color: var(--Carbon-Black);
     padding: 0.5rem;
-    background: rgba(255, 255, 255, 0.418);
+    background: #F4F9FD;
     border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 5px 15px -5px #1D252CAF;
     backdrop-filter: blur(9.1px);
     -webkit-backdrop-filter: blur(9.1px);
-    border: 1px solid rgba(255, 255, 255, 0.28);
+    border: 1px solid #F4F9FD55;
     border-radius: 1rem;
     min-width: 300px;
     max-width: 90%;
@@ -115,7 +115,7 @@ div p {
     width: 90%;
 }
 .inner_inner_window hr {
-    color: black;
+    color: var(--Carbon-Black);
     margin-top: 0.3rem;
     margin-bottom: 0.3rem;
 }
