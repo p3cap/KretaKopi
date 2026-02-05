@@ -29,20 +29,24 @@ const state = computed({
 
 
 <template>
-	<slot></slot>
-	<p>{{ description }}</p>
+	<h2 class="setting-title">
+		<slot></slot>
+	</h2>
+	<p class="setting-desc">{{ description }}</p>
 
 	<!-- switch -->
 	<input 
 		v-if="props.type === 'switch'"
 		type="checkbox"
 		:checked="state"
+		class="input-button"
 		@change="state = $event.target.checked"
 	/>
 	<!-- drop-down -->
 	<select
 		v-else-if="props.type === 'drop-down'"
 		v-model="state"
+		class="input-field"
 	>
 		<option
 			v-for="item in props.stateList"
@@ -57,6 +61,7 @@ const state = computed({
 		v-else-if="props.type === 'numberInput'"
 		type="number"
 		v-model="state"
+		class="input-field"
 	/>
 	<!-- text -->
 	<input

@@ -231,6 +231,10 @@ export default {
     "EN": "Change language",
     "HU": "Nyelv változtatás"
   },
+  "notifications": {
+    "EN": "Notifications",
+    "HU": "Éretsítések"
+  },
   "good_morning": {
     "EN": "Good morning",
     "HU": "Jó reggelt"
