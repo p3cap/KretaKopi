@@ -25,31 +25,37 @@ Copilot made lang editor, tested.
 			</div>
 
 			<div class="control-group">
-				<button 
-					@click="showAddKeyForm = !showAddKeyForm" 
+				<label class="filter-label">Filter:</label>
+				<select v-model="filterMode" class="filter-select">
+					<option value="all">A–Z (All)</option>
+					<option value="new">✨ Newly Added</option>
+					<option value="changed">📝 Edited</option>
+					<option value="newOrChanged">🔄 New or Edited</option>
+				</select>
+			</div>
+
+			<div class="control-group">
+				<button
+					@click="showAddKeyForm = !showAddKeyForm"
 					class="btn btn-add"
 					:class="{ active: showAddKeyForm }"
 				>
 					➕ New Key
 				</button>
-				<button 
-					@click="showAddLangForm = !showAddLangForm" 
+				<button
+					@click="showAddLangForm = !showAddLangForm"
 					class="btn btn-add"
 					:class="{ active: showAddLangForm }"
 				>
 					🌍 New Language
 				</button>
-				<button
-					@click="saveChanges"
-					:disabled="isSaving"
-					class="btn btn-save"
-				>
+				<button @click="saveChanges" :disabled="isSaving" class="btn btn-save">
 					{{ isSaving ? "Saving..." : "💾 Save Changes" }}
 				</button>
 			</div>
 
-			<!-- Add Key Form -->
-			<div v-if="showAddKeyForm" class="form-group">
+			<!-- Add Key Form (now shows inputs for all langs) -->
+			<div v-if="showAddKeyForm" class="form-group form-vertical">
 				<input
 					v-model="newKeyInput"
 					type="text"
@@ -59,8 +65,17 @@ Copilot made lang editor, tested.
 					@keyup.escape="showAddKeyForm = false"
 					autofocus
 				/>
-				<button @click="addKey" class="btn btn-form">Add Key</button>
-				<button @click="showAddKeyForm = false" class="btn btn-form-cancel">Cancel</button>
+				<div class="per-lang-inputs">
+					<label v-if="languages.length === 0" class="muted">No languages yet — add one first</label>
+					<div v-for="lang in languages" :key="lang" class="lang-input-row">
+						<span class="lang-label">{{ lang }}</span>
+						<input v-model="newKeyLangValues[lang]" type="text" class="form-input" :placeholder="`Value for ${lang}`" />
+					</div>
+				</div>
+				<div class="form-actions">
+					<button @click="addKey" class="btn btn-form">Add Key</button>
+					<button @click="showAddKeyForm = false" class="btn btn-form-cancel">Cancel</button>
+				</div>
 			</div>
 
 			<!-- Add Language Form -->
@@ -78,9 +93,7 @@ Copilot made lang editor, tested.
 				<button @click="showAddLangForm = false" class="btn btn-form-cancel">Cancel</button>
 			</div>
 
-			<div v-if="saveStatus" :class="['status-message', saveStatus.type]">
-				{{ saveStatus.message }}
-			</div>
+			<div v-if="saveStatus" :class="['status-message', saveStatus.type]">{{ saveStatus.message }}</div>
 		</div>
 
 		<div class="table-wrapper">
@@ -89,7 +102,10 @@ Copilot made lang editor, tested.
 					<tr>
 						<th class="col-key">Key</th>
 						<th v-for="lang in languages" :key="lang" class="col-lang">
-							{{ lang }}
+							<div class="lang-head">
+								<span>{{ lang }}</span>
+								<button class="btn-delete-lang" @click="deleteLang(lang)" title="Delete language">✖</button>
+							</div>
 						</th>
 						<th class="col-actions">Actions</th>
 					</tr>
@@ -97,24 +113,26 @@ Copilot made lang editor, tested.
 				<tbody>
 					<tr v-for="key in filteredKeys" :key="key" class="translation-row">
 						<td class="col-key">
-							<code>{{ key }}</code>
+							<input
+								v-model="editingKeyDrafts[key]"
+								@blur="commitRename(key)"
+								@keyup.enter="commitRename(key)"
+								class="key-input"
+								:class="{ 'new-key': addedKeys[key], 'changed-key': changedKeys[key] }"
+							/>
 						</td>
 						<td v-for="lang in languages" :key="lang" class="col-lang">
 							<input
-								v-model="translations[key][lang]"
+								:value="translations[key] && translations[key][lang] !== undefined ? translations[key][lang] : ''"
+								@input="e => updateTranslation(key, lang, e.target.value)"
 								type="text"
 								class="translation-input"
+								:class="{ 'new-key': addedKeys[key], 'new-lang': addedLangs[lang], 'changed-cell': changedCells[`${key}|${lang}`] }"
 								:placeholder="lang"
 							/>
 						</td>
 						<td class="col-actions">
-							<button
-								@click="deleteKey(key)"
-								class="btn-delete"
-								title="Delete this key"
-							>
-								🗑️
-							</button>
+							<button @click="deleteKey(key)" class="btn-delete" title="Delete this key">🗑️</button>
 						</td>
 					</tr>
 				</tbody>
@@ -123,18 +141,21 @@ Copilot made lang editor, tested.
 
 		<footer class="editor-footer">
 			<p>Total keys: <strong>{{ Object.keys(translations).length }}</strong></p>
-			<p>Languages: <strong>{{ languages.join(", ") }}</strong></p>
+			<p>Languages: <strong>{{ languages.join(', ') }}</strong></p>
 		</footer>
 	</div>
 </template>
 
 <script setup lang="js">
 import { baseDynamicTexts } from "@/data/translate.js"
-import { reactive, computed, ref } from "vue"
+import { reactive, computed, ref, watch } from "vue"
 import translationDictionary from "@/data/langDictionary.js"
 
-// reactive wrapper
-const translations = reactive({ ...translationDictionary })
+// deep copy original to detect changes
+const originalTranslations = JSON.parse(JSON.stringify(translationDictionary || {}))
+
+// reactive wrapper (deep clone so edits don't mutate originalTranslations)
+const translations = reactive(JSON.parse(JSON.stringify(translationDictionary || {})))
 const isSaving = ref(false)
 const saveStatus = ref(null)
 const searchQuery = ref("")
@@ -142,37 +163,92 @@ const newKeyInput = ref("")
 const newLangInput = ref("")
 const showAddKeyForm = ref(false)
 const showAddLangForm = ref(false)
+const filterMode = ref("all")
 
-// languages derived from all keys
+// tracking additions and changes
+const addedKeys = reactive({})
+const addedLangs = reactive({})
+const changedCells = reactive({})
+const changedKeys = reactive({})
+
+// drafts for renaming keys
+const editingKeyDrafts = reactive({})
+// per-lang values in add-key form
+const newKeyLangValues = reactive({})
+
+// initialize editing drafts and newKeyLangValues
+for (const k in translations) editingKeyDrafts[k] = k
+{
+	const langs = new Set()
+	Object.values(translations).forEach(entry => Object.keys(entry).forEach(l => langs.add(l)))
+	for (const l of langs) newKeyLangValues[l] = ""
+}
+
+// languages derived from all keys (sorted A–Z)
 const languages = computed(() => {
 	const set = new Set()
 	Object.values(translations).forEach(entry => {
 		Object.keys(entry).forEach(lang => set.add(lang))
 	})
-	return [...set].sort()
+	return [...set].sort((a, b) => a.localeCompare(b))
 })
 
-// filter keys by search
+// keep newKeyLangValues in sync with languages
+watch(languages, (langs) => {
+	langs.forEach(lang => {
+		if (newKeyLangValues[lang] === undefined) newKeyLangValues[lang] = ""
+	})
+})
+
+// filter keys by search (sorted A–Z)
 const filteredKeys = computed(() => {
-	if (!searchQuery.value.trim()) {
-		return Object.keys(translations).sort()
+	const keys = Object.keys(translations).filter(k => k && typeof k === 'string')
+	
+	// apply search filter
+	let filtered = !searchQuery.value.trim()
+		? keys
+		: keys.filter(key => key.toLowerCase().includes(searchQuery.value.toLowerCase()))
+	
+	// apply filter mode
+	if (filterMode.value === "new") {
+		filtered = filtered.filter(key => addedKeys[key])
+	} else if (filterMode.value === "changed") {
+		filtered = filtered.filter(key => changedKeys[key] || Object.keys(changedCells).some(c => c.startsWith(key + "|")))
+	} else if (filterMode.value === "newOrChanged") {
+		filtered = filtered.filter(key => addedKeys[key] || changedKeys[key] || Object.keys(changedCells).some(c => c.startsWith(key + "|")))
 	}
-	return Object.keys(translations)
-		.filter(key => key.toLowerCase().includes(searchQuery.value.toLowerCase()))
-		.sort()
+	
+	// sort A–Z
+	return filtered.sort((a, b) => a.localeCompare(b))
 })
 
-// add a new key
+// helpers
+function markCellChanged(key, lang) {
+	const orig = (originalTranslations[key] && originalTranslations[key][lang] !== undefined) ? originalTranslations[key][lang] : ""
+	const curr = (translations[key] && translations[key][lang] !== undefined) ? translations[key][lang] : ""
+	changedCells[`${key}|${lang}`] = !addedKeys[key] && !addedLangs[lang] && curr !== orig
+}
+
+function updateTranslation(key, lang, value) {
+	if (!translations[key]) translations[key] = {}
+	translations[key][lang] = value
+	markCellChanged(key, lang)
+}
+
+// add a new key (uses per-lang inputs)
 function addKey() {
 	const key = newKeyInput.value.trim()
 	if (!key || translations[key]) {
-		if (translations[key]) {
-			saveStatus.value = { type: "error", message: `Key "${key}" already exists` }
-		}
+		if (translations[key]) saveStatus.value = { type: "error", message: `Key "${key}" already exists` }
 		return
 	}
 	translations[key] = {}
-	languages.value.forEach(lang => (translations[key][lang] = ""))
+	languages.value.forEach(lang => {
+		translations[key][lang] = newKeyLangValues[lang] ?? ""
+		newKeyLangValues[lang] = ""
+	})
+	addedKeys[key] = true
+	editingKeyDrafts[key] = key
 	newKeyInput.value = ""
 	showAddKeyForm.value = false
 	saveStatus.value = { type: "success", message: `Added key "${key}"` }
@@ -183,21 +259,77 @@ function addKey() {
 function addLang() {
 	const lang = newLangInput.value.trim().toUpperCase()
 	if (!lang || languages.value.includes(lang)) {
-		if (languages.value.includes(lang)) {
-			saveStatus.value = { type: "error", message: `Language "${lang}" already exists` }
-		}
+		if (languages.value.includes(lang)) saveStatus.value = { type: "error", message: `Language "${lang}" already exists` }
 		return
 	}
 	for (const key in translations) {
 		translations[key][lang] = ""
 	}
+	newKeyLangValues[lang] = ""
+	addedLangs[lang] = true
 	newLangInput.value = ""
 	showAddLangForm.value = false
 	saveStatus.value = { type: "success", message: `Added language "${lang}"` }
 	setTimeout(() => (saveStatus.value = null), 2000)
 }
 
-// save to file
+// commit rename of a key
+function commitRename(oldKey) {
+	const draft = (editingKeyDrafts[oldKey] || "").trim()
+	if (!draft || draft === oldKey) {
+		editingKeyDrafts[oldKey] = oldKey
+		return
+	}
+	if (translations[draft]) {
+		saveStatus.value = { type: "error", message: `Key "${draft}" already exists` }
+		editingKeyDrafts[oldKey] = oldKey
+		setTimeout(() => (saveStatus.value = null), 2000)
+		return
+	}
+	// move value
+	translations[draft] = translations[oldKey]
+	delete translations[oldKey]
+
+	// move added/changed flags
+	addedKeys[draft] = addedKeys[oldKey] || false
+	if (addedKeys[oldKey]) delete addedKeys[oldKey]
+
+	changedKeys[draft] = true
+
+	// move originalTranslations entry
+	originalTranslations[draft] = originalTranslations[oldKey] || {}
+	delete originalTranslations[oldKey]
+
+	// remap changedCells entries
+	Object.keys(changedCells).forEach(k => {
+		if (k.startsWith(oldKey + "|")) {
+			const rest = k.slice(oldKey.length + 1)
+			changedCells[`${draft}|${rest}`] = changedCells[k]
+			delete changedCells[k]
+		}
+	})
+
+	// move editing draft
+	editingKeyDrafts[draft] = draft
+	delete editingKeyDrafts[oldKey]
+
+	saveStatus.value = { type: "success", message: `Renamed "${oldKey}" → "${draft}"` }
+	setTimeout(() => (saveStatus.value = null), 2000)
+}
+
+// delete a language (remove column)
+function deleteLang(lang) {
+	if (!confirm(`Delete language "${lang}" from all keys?`)) return
+	for (const key in translations) {
+		if (translations[key] && translations[key][lang] !== undefined) delete translations[key][lang]
+		delete changedCells[`${key}|${lang}`]
+	}
+	delete addedLangs[lang]
+	saveStatus.value = { type: "success", message: `Deleted language "${lang}"` }
+	setTimeout(() => (saveStatus.value = null), 2000)
+}
+
+// save to file (unchanged)
 async function saveChanges() {
 	isSaving.value = true
 	saveStatus.value = null
@@ -215,10 +347,7 @@ async function saveChanges() {
 			saveStatus.value = { type: "error", message: "Save failed: " + error.error }
 		}
 	} catch (err) {
-		saveStatus.value = { 
-			type: "error", 
-			message: "Connection error - make sure the backend server is running on port 3001" 
-		}
+		saveStatus.value = { type: "error", message: "Connection error - make sure the backend server is running on port 3001" }
 	} finally {
 		isSaving.value = false
 	}
@@ -227,7 +356,11 @@ async function saveChanges() {
 // delete a key
 function deleteKey(key) {
 	if (confirm(`Delete key "${key}"?`)) {
+		// remove related markers
+		Object.keys(changedCells).forEach(k => { if (k.startsWith(key + "|")) delete changedCells[k] })
 		delete translations[key]
+		delete editingKeyDrafts[key]
+		delete addedKeys[key]
 	}
 }
 </script>
@@ -292,6 +425,32 @@ function deleteKey(key) {
 }
 
 .search-input:focus {
+	outline: none;
+	border-color: #667eea;
+	box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.filter-label {
+	font-weight: 600;
+	color: #374151;
+	margin-right: 0.5rem;
+}
+
+.filter-select {
+	padding: 0.6rem 0.75rem;
+	font-size: 0.95rem;
+	border: 2px solid #e0e0e0;
+	border-radius: 8px;
+	background: white;
+	cursor: pointer;
+	transition: all 0.3s;
+}
+
+.filter-select:hover {
+	border-color: #667eea;
+}
+
+.filter-select:focus {
 	outline: none;
 	border-color: #667eea;
 	box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
@@ -504,6 +663,34 @@ code {
 	background: #fee2e2;
 	transform: scale(1.1);
 }
+
+/* New/changed highlighting and layout */
+.key-input {
+	width: 100%;
+	padding: 0.5rem;
+	border: 1px solid #e0e0e0;
+	border-radius: 6px;
+	font-size: 0.95rem;
+}
+.key-input.new-key { background: #ecfdf5; border-color: #34d399; }
+.key-input.changed-key { background: #fffbeb; border-color: #f59e0b; }
+.translation-input.new-key { background: #ecfdf5; }
+.translation-input.new-lang { background: #eef2ff; }
+.translation-input.changed-cell { background: #fff7ed; border-color: #f59e0b; }
+.btn-delete-lang {
+	margin-left: 8px;
+	background: none;
+	border: none;
+	color: #9ca3af;
+	cursor: pointer;
+}
+.btn-delete-lang:hover { color: #ef4444; }
+.form-vertical { flex-direction: column; align-items: stretch; }
+.per-lang-inputs { margin-top: 0.75rem; display: flex; flex-direction: column; gap: 0.5rem; }
+.lang-input-row { display:flex; gap:0.5rem; align-items:center; }
+.lang-label { width:64px; color:#374151; font-weight:600 }
+.form-actions { margin-top:0.5rem }
+
 
 .editor-footer {
 	background: white;
