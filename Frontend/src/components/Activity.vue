@@ -47,12 +47,12 @@ const isPopupOpen = ref(false);
     border-radius: 1.75rem;
 }
 .container svg {
-    color: var(--Secondary);
+    color: var(--Carbon-Black);
     height: 40px;
     width: 40px;
 }
 .container h2 {
-    color: var(--Primary);
+    color: var(--Carbon-Black);
     font-size: 1rem;
     font-weight: 600;
     line-height: 1.5;
@@ -79,7 +79,7 @@ div p {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 100;
+    z-index: 1000;
     color: white;
 }
 .inner_window {
