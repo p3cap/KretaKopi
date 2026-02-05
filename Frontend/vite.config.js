@@ -19,7 +19,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: fileURLToPath(new URL('./index.html', import.meta.url)),
-        editor: fileURLToPath(new URL('./editor.html', import.meta.url)),
+        langEditor: fileURLToPath(new URL('./editor.html', import.meta.url)),
       },
     },
   },

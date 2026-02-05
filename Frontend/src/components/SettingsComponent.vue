@@ -1,21 +1,67 @@
-<script setup lang="js">
-import { ref } from "vue"
+<script setup>
+import { computed } from "vue"
 import { writeData, getData } from "@/data/data"
-import { translateKey as t } from "@/data/translate.js"
 import router from "@/router"
 
-let isHU = ref(getData("user_settings/language") === "HU")
+const props = defineProps({
+	jsonPath: { type: String, required: true },
+	type: { type: String, default: "switch" },
+	description: { type: String, default: "" },
+	stateList: { type: Array, default: () => ["true", "false"] },
+	icon: { type: String, default: "" },
+	refreshOnApply: { type: Boolean, default: false }
+})
 
-function changeLang() {
-    isHU = !isHU
-	const lang = isHU ? "HU" : "EN"
-	writeData("user_settings/language", lang)// Refresh the page to apply language changes
-}
+// getter setter
+const state = computed({
+	get() {
+		return getData(props.jsonPath)
+	},
+	set(value) {
+		writeData(props.jsonPath, value)
+
+		if (props.refreshOnApply) {
+			router.go(0) // refresh the view
+		}
+	}
+})
 </script>
 
-<template>
-	<p>lang test</p>
 
-	<input type="checkbox" @change="changeLang" />
-	<p>{{ isHU ? "HU" : "EN" }}</p>
+<template>
+	<slot></slot>
+	<p>{{ description }}</p>
+
+	<!-- switch -->
+	<input 
+		v-if="props.type === 'switch'"
+		type="checkbox"
+		:checked="state"
+		@change="state = $event.target.checked"
+	/>
+	<!-- drop-down -->
+	<select
+		v-else-if="props.type === 'drop-down'"
+		v-model="state"
+	>
+		<option
+			v-for="item in props.stateList"
+			:key="item"
+			:value="item"
+		>
+			{{ item }}
+		</option>
+	</select>
+	<!-- number -->
+	<input
+		v-else-if="props.type === 'numberInput'"
+		type="number"
+		v-model="state"
+	/>
+	<!-- text -->
+	<input
+		v-else-if="props.type === 'textInput'"
+		type="text"
+		v-model="state"
+	/>
 </template>

@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "dev:lang": "concurrently \"node src/data/langEditor/server.js\" \"vite --open editor.html\"",
+    "dev:lang": "concurrently \"node src/data/langEditor/server.js\" \"vite --open src/data/langEditor/editor.html\"",
     "build": "vite build",
     "preview": "vite preview",
     "format": "prettier --write --experimental-cli src/"
