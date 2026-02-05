@@ -230,5 +230,9 @@ export default {
   "setting_language_desc": {
     "EN": "Change language",
     "HU": "Nyelv változtatás"
+  },
+  "notifications": {
+    "EN": "Notifications",
+    "HU": "Éretsítések"
   }
 }

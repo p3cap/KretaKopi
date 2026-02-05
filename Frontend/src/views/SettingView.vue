@@ -13,13 +13,11 @@ import { translateKey as t } from "@/data/translate.js"
     >
     {{ t("language") }},
     </setting>
-
+    <br>
     <setting 
-    json-path="user_settings/language"
-    type="drop-down"
-    :description="t('setting_language_desc')"
-    :state-list="['EN', 'HU']"
+    json-path="user_settings/notifications/exam_notifications"
+    type="switch"
     >
-    {{ t("language") }},
+    {{ t("notifications") }}
     </setting>
 </template>
