@@ -1,6 +1,7 @@
 <script setup>
 import { NotebookPen } from 'lucide-vue-next';
 import HomeWorks from "../components/HomeWorks.vue";
+import { translateKey as t } from "@/data/translate.js";
 </script>
 
 <template>
@@ -8,7 +9,7 @@ import HomeWorks from "../components/HomeWorks.vue";
         <div class="container">
             <div id="header">
                 <NotebookPen id="note" />
-                <p id="title">Házi feladataid</p>
+                <p id="title">{{ t("homeworks") }}</p>
             </div>
             <HomeWorks />
             <HomeWorks />
@@ -47,11 +48,11 @@ main {
     content: "";
     position: absolute;
     left: 0;
-    bottom: -6px;
+    bottom: -1px;
     width: 100%; /* pontosan a szöveg szélessége */
     height: 8px;
     background-color: red;
-    opacity: 0.5;
+    opacity: 0.3;
     border-radius: 0.5rem;
 }
 

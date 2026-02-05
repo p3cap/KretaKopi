@@ -22,10 +22,11 @@
     background-color: var(--Platinum);
 }
 #toptext {
-    font-size: 20px;
+    font-size: 17px;
     color: var(--Carbon-Black);
 }
 #desc {
+    font-size: 14px;
     color: var(--Iron-Grey);
 }
 </style>

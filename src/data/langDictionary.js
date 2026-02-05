@@ -250,5 +250,9 @@ export default {
   "good_afternoon": {
     "EN": "Good afternoon",
     "HU": "Szép délutánt"
+  },
+  "homeworks": {
+    "EN": "To-do's",
+    "HU": "Házi feladataid"
   }
 }

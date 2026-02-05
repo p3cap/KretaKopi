@@ -95,8 +95,8 @@ div p {
     border-radius: 1rem;
     min-width: 300px;
     max-width: 90%;
-    height: 670px;
-    width: 400px;
+    height: 570px;
+    width: 300px;
     display: flex;
     flex-direction: column;
 }
