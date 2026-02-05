@@ -230,5 +230,21 @@ export default {
   "setting_language_desc": {
     "EN": "Change language",
     "HU": "Nyelv változtatás"
+  },
+  "good_morning": {
+    "EN": "Good morning",
+    "HU": "Jó reggelt"
+  },
+  "nice_day": {
+    "EN": "Have a nice day",
+    "HU": "Legyen szép napod"
+  },
+  "good_evening": {
+    "EN": "Good evening",
+    "HU": "Kellemes estét"
+  },
+  "good_afternoon": {
+    "EN": "Good afternoon",
+    "HU": "Szép délutánt"
   }
 }

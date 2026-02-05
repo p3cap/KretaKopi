@@ -1,6 +1,6 @@
 <script setup>
 import { ref, watch, nextTick } from 'vue'
-import { waapi, animate, utils } from 'animejs'
+import { waapi, animate, utils, eases } from 'animejs'
 import { User } from 'lucide-vue-next'
 const open = ref(false)
 const btn = ref(null)
@@ -30,7 +30,7 @@ watch(open, async (val) => {
     x: targetX,
     y: targetY,
     duration: 300,
-    ease: 'outQuad',
+    ease: eases.outQuad,
     scale: val ? 1.5 : 1,
   })
 })
@@ -42,9 +42,7 @@ watch(open, async (val) => {
         <transition name="overlay">
             <div v-if="open" class="overlay" @click.self="open = false">
                 <div class="sheet">
-                    <h2>Profil</h2>
-                    <p>fas</p>
-                    <p>fas</p>
+                    <h2>Szia (name)!</h2>
                 </div>
             </div>
         </transition>
@@ -61,7 +59,7 @@ watch(open, async (val) => {
   background: none;
   border: none;
   cursor: pointer;
-  z-index: 1000;
+  z-index: 767;
   background-color: #F4F9FD;
   width: 3rem;
   height: 3rem;
@@ -79,18 +77,17 @@ watch(open, async (val) => {
   inset: 0;
   background: #303A4355;
   backdrop-filter: blur(3px);
-  z-index: 999;
   display: flex;
   align-items: flex-end;
+  z-index: 676;
 }
 
 .sheet {
   width: 100%;
   background-color: #F4F9FDD0;
   border-radius: 20px 20px 0 0;
-  padding-top: 2rem;
   text-align: center;
-  padding: 20px;
+  padding: 50px;
   height: 80vh;
   transform: translateY(0);
   transition: transform 0.35s ease;
