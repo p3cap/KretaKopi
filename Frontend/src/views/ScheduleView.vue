@@ -97,6 +97,7 @@ function setActive(key) {
         border-radius: 1.5rem;
         box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 10px;
         position: relative;
+        margin-top: 1rem;
 
         .week-switch {
             background-color: transparent;

@@ -7,7 +7,7 @@ import Profile from './components/Profile.vue';
 
 <template>
   <Icon/>
-  
+  <Profile />
   <Navbar/>
   
   <RouterView />
