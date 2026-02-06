@@ -256,7 +256,7 @@ export default {
     "HU": "Házi feladataid"
   },
   "justified": {
-    "EN": "Iustified",
+    "EN": "Justified",
     "HU": "Igazolt"
   },
   "unjustified": {
@@ -266,5 +266,10 @@ export default {
   "new": {
     "EN": "New",
     "HU": "Új"
+  },
+  "reason": {
+    "EN": "Reason",
+    "HU": "Ok"
   }
+  
 }

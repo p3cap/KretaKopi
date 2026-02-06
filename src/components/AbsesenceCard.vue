@@ -40,7 +40,7 @@ function markAsViewed() {
       </p>
 
       <p v-if="omission.justification_type">
-        Reason: {{ omission.justification_type }}
+        {{ t('reason') }}: {{ omission.justification_type }}
       </p>
 
       <span v-if="omission.viewed === false" class="badge">

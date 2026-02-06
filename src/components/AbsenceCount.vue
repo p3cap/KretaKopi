@@ -34,6 +34,7 @@ const unjustifiedCount = computed(() =>
 .stats {
   display: flex;
   gap: 16px;
+  margin-top: 1rem;
 }
 
 .stat {

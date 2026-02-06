@@ -288,7 +288,7 @@
       "class_id": "Mathematics-11a-Advanced",
       "date": "2025-10-14",
       "is_justified": true,
-      "justification_type": "medical",
+      "justification_type": "medical_justification",
       "teacher_id": "1001"
     },
     {
@@ -303,7 +303,7 @@
       "class_id": "English-11a",
       "date": "2026-03-04",
       "is_justified": true,
-      "justification_type": "family",
+      "justification_type": "family_justification",
       "teacher_id": "1003",
       "viewed": false
     },
@@ -311,7 +311,7 @@
       "class_id": "PhysicalEducation-11a",
       "date": "2026-05-12",
       "is_justified": true,
-      "justification_type": "medical",
+      "justification_type": "medical_justification",
       "teacher_id": "1010",
       "viewed": false
     }

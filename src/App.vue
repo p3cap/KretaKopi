@@ -4,6 +4,8 @@ import Navbar from "./components/Navbar.vue"
 import Icon from './components/Icon.vue';
 import Profile from './components/Profile.vue';
 
+
+// debug
 </script>
 
 <template>
@@ -12,8 +14,8 @@ import Profile from './components/Profile.vue';
   <Navbar/>
   <RouterView />
   <!-- 
-   idea
-   Change view with side to side swiping?
+  idea
+  Change view with side to side swiping?
   -->
 </template>
 

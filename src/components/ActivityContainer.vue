@@ -14,7 +14,7 @@ import { translateKey as t } from "@/data/translate.js";
     <Activity />
     <Activity />
     <Activity />
-  </div>
+  </div> 
 </template>
 
 <style scoped>
