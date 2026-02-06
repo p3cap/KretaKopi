@@ -16,7 +16,7 @@ function uzenet() {
 </script>
 
 <template>
-    <h1 id="uzenet">{{uzenet()}}, (user)!</h1>
+    <h1 id="uzenet">{{uzenet()}}, {{ t("{user}") }}!</h1>
 
     <HWContainer />
     <ActivityContainer />

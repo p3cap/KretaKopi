@@ -11,7 +11,10 @@ import Profile from './components/Profile.vue';
   <Profile />
   <Navbar/>
   <RouterView />
-
+  <!-- 
+   idea
+   Change view with side to side swiping?
+  -->
 </template>
 
 <style scoped>

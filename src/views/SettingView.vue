@@ -3,11 +3,24 @@ import setting from "@/components/SettingsComponent.vue"
 import { translateKey as t } from "@/data/translate.js"
 </script>
 
+<!-- 
+HOW TO
+
+<setting 
+    json-path="setting path"
+    type="drop-down"/"switch"/"numberInput"/"textInput"
+    :description="..."
+    :state-list="['option1', 'option2']" 
+    >
+    {{ t("language") }},
+</setting>
+-->
+
 <template>
     <h1>{{ t("settings") }}</h1>
     <setting 
     json-path="user_settings/language"
-    type="drop-down"
+    type="drop-down" 
     :description="t('setting_language_desc')"
     :state-list="['EN', 'HU']"
     >

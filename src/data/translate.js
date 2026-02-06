@@ -8,7 +8,7 @@ const baseDynamicTexts = {
   '{user}': getData('student/name') || 'No name',
   '{desc}': 'No desc',
   '{subject}': 'No subject',
-  '{grade}': 'No grade',
+  '{grade}': 'No grade'
 }
 
 // translates based on dictionary AND replaces placeholders
