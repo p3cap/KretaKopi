@@ -254,5 +254,17 @@ export default {
   "homeworks": {
     "EN": "To-do's",
     "HU": "Házi feladataid"
+  },
+  "justified": {
+    "EN": "Iustified",
+    "HU": "Igazolt"
+  },
+  "unjustified": {
+    "EN": "Unjustified",
+    "HU": "Igazolatlan"
+  },
+  "new": {
+    "EN": "New",
+    "HU": "Új"
   }
 }
