@@ -1,6 +1,7 @@
 <script setup lang="js">
 //translation
 import { translateKey as t } from "@/data/translate.js";
+import { ArrowLeft, ArrowRight } from "lucide-vue-next";
 
 import LessonCard from "../components/LessonCard.vue";
 import { ref } from "vue";
@@ -20,17 +21,17 @@ import { reactive } from 'vue';
 const lista = reactive({'Mo': true, 'Tu': false, 'We': false, 'Th': false, 'Fr': false, 'Sa': false, 'Su': false})
 
 function setActive(key) {
-  Object.keys(lista).forEach(k => (lista[k] = false))
-  lista[key] = true
+    Object.keys(lista).forEach(k => (lista[k] = false))
+    lista[key] = true
 }
 
 </script>
 
 <template>
     <div id="days">
-        <button class="week-switch left" @click="left"><</button>
+        <ArrowLeft class="week-switch left" @click="left"></ArrowLeft>
         <p class="week">Január 01-07.</p>
-        <button class="week-switch right" @click="right">></button>
+        <ArrowRight class="week-switch right" @click="right"></ArrowRight>
         <ul>
             <li @click="setActive('Mo')" :class="{ active: lista.Mo }">
                 <p @click="">{{ t("monday").slice(0,2) }}</p>
@@ -82,6 +83,15 @@ function setActive(key) {
         </div>
     </main>
 </template>
+
+
+<!-- 
+
+
+Guys, legyen központi css rendszer >:(
+
+
+-->
 
 <style scoped>
     ul {

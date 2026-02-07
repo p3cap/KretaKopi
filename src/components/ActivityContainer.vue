@@ -17,6 +17,17 @@ import { translateKey as t } from "@/data/translate.js";
   </div> 
 </template>
 
+
+
+
+<!-- 
+
+
+Guys, legyen központi css rendszer >:(
+
+
+-->
+
 <style scoped>
 h1 {
   font-weight: bold;

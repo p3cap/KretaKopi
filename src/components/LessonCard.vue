@@ -12,6 +12,14 @@
 
 </template>
 
+<!-- 
+
+
+Guys, legyen központi css rendszer >:(
+
+
+-->
+
 <style scoped>
     .lesson-card {
         background-color: var(--Bright-Snow);

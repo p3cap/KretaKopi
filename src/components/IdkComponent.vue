@@ -1,34 +1,27 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue';
-import { getNotifyList } from '@/data/data.js'; // adjust the path if necessary
+import { getNotifyList } from '@/data/data.js';
+import { formatDate } from '@/data/functions.js'
 import { guessIcon } from '@/data/iconizer';
 
 const notifications = ref([]);
 
-// Load notifications on mount
 onMounted(() => {
-  notifications.value = getNotifyList();
+  notifications.value = getNotifyList({
+    sort: (a, b) => new Date(b.date) - new Date(a.date) // will be changed to types instead of arrowfunction
+  });
 });
-
-// Sort notifications by date (descending)
-const sortedNotifications = computed(() => {
-  return [...notifications.value].sort((a, b) => new Date(b.date) - new Date(a.date));
-});
-
-// Format date nicely
-function formatDate(dateStr) {
-  const date = new Date(dateStr);
-  if (isNaN(date)) return dateStr; // fallback
-  return date.toLocaleDateString('hu-HU', { year: 'numeric', month: '2-digit', day: '2-digit' });
-}
 </script>
+
 <template>
   <div class="notifications">
     <h2 class="title">Notifications</h2>
     <div v-if="notifications.length === 0">No notifications found.</div>
     <ul v-else class="notification-list">
-      <li v-for="(item, index) in sortedNotifications" :key="index" class="notification-item">
-        {{ guessIcon(item.class) }}
+      <li v-for="(item, index) in notifications" :key="index" class="notification-item">
+
+        <component :is="guessIcon(item.class)"/> <!-- Example usage -->
+
         <div class="notification-header">
           <strong>{{ item.class }}</strong> — {{ formatDate(item.date) }}
         </div>
@@ -49,7 +42,13 @@ function formatDate(dateStr) {
   </div>
 </template>
 
+<!-- 
 
+
+Guys, legyen központi css rendszer >:(
+
+
+-->
 
 <style scoped>
 .notifications {
@@ -73,7 +72,7 @@ function formatDate(dateStr) {
   border-radius: 8px;
   padding: 12px;
   margin-bottom: 12px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .notification-header {

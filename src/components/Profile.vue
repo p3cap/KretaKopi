@@ -49,6 +49,17 @@ watch(open, async (val) => {
     </Teleport>
 
 </template>
+
+
+
+<!-- 
+
+
+Guys, legyen központi css rendszer >:(
+
+
+-->
+
 <style scoped>
 
 .profile-btn {

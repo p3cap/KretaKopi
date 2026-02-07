@@ -270,6 +270,9 @@ export default {
   "reason": {
     "EN": "Reason",
     "HU": "Ok"
+  },
+  "weight": {
+    "EN": "weight",
+    "HU": "súly"
   }
-  
 }

@@ -36,6 +36,15 @@ const isPopupOpen = ref(false);
 
 </template>
 
+
+<!-- 
+
+
+Guys, legyen központi css rendszer >:(
+
+
+-->
+
 <style scoped>
 .container {
     cursor: pointer;

@@ -17,6 +17,17 @@ import { translateKey as t } from "@/data/translate.js";
     </main>
 </template>
 
+
+
+
+<!-- 
+
+
+Guys, legyen központi css rendszer >:(
+
+
+-->
+
 <style scoped>
 main {
     display: flex;

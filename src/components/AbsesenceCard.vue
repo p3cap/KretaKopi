@@ -50,6 +50,15 @@ function markAsViewed() {
   </div>
 </template>
 
+
+<!-- 
+
+
+Guys, legyen központi css rendszer >:(
+
+
+-->
+
 <style scoped>
 .omission-card {
   padding: 14px 16px;

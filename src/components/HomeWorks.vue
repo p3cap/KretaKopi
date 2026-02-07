@@ -10,6 +10,15 @@
     </div>
 </template>
 
+
+<!-- 
+
+
+Guys, legyen központi css rendszer >:(
+
+
+-->
+
 <style scoped>
 .box {
     cursor: pointer;

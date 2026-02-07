@@ -30,6 +30,17 @@ const unjustifiedCount = computed(() =>
   </div>
 </template>
 
+
+
+
+<!-- 
+
+
+Guys, legyen központi css rendszer >:(
+
+
+-->
+
 <style scoped>
 .stats {
   display: flex;

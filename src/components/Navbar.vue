@@ -111,6 +111,19 @@ watch(
 <div class="bg-blur"></div>
 </template>
 
+
+
+
+<!-- 
+
+
+Guys, legyen központi css rendszer >:(
+
+
+-->
+
+
+
 <style scoped>
 nav {
   position: fixed;
