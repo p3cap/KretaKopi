@@ -20,6 +20,10 @@ Guys, legyen központi css rendszer >:(
 -->
 
 <style scoped>
+hr {
+    border: 1px solid var(--Pale-Slate2);
+    margin-bottom: 0.5rem;
+}
 .box {
     cursor: pointer;
     margin-top: 10px;
