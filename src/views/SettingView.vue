@@ -17,20 +17,22 @@ HOW TO
 -->
 
 <template>
-    <h1>{{ t("settings") }}</h1>
-    <setting 
-    json-path="user_settings/language"
-    type="drop-down" 
-    :description="t('setting_language_desc')"
-    :state-list="['EN', 'HU']"
-    >
-    {{ t("language") }},
-    </setting>
-    <br>
-    <setting 
-    json-path="user_settings/notifications/exam_notifications"
-    type="switch"
-    >
-    {{ t("notifications") }}
-    </setting>
+    <div class="page">
+        <h1>{{ t("settings") }}</h1>
+        <setting
+        json-path="user_settings/language"
+        type="drop-down"
+        :description="t('setting_language_desc')"
+        :state-list="['EN', 'HU']"
+        >
+        {{ t("language") }},
+        </setting>
+        <br>
+        <setting
+        json-path="user_settings/notifications/exam_notifications"
+        type="switch"
+        >
+        {{ t("notifications") }}
+        </setting>
+    </div>
 </template>

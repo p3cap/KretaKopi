@@ -13,17 +13,17 @@ function handleViewed(omission) {
 </script>
 
 <template>
-    <h1>{{t('absence')}}
-    </h1>
-    <AbsenceCount/>
-  <AbsesenceCard
-        v-for="(o, i) in omissions"
-        :key="i"
-        :omission="o"
-        @viewed="handleViewed"
-      />
-
-
+    <div class="page">
+      <h1>{{t('absence')}}
+      </h1>
+      <AbsenceCount/>
+      <AbsesenceCard
+            v-for="(o, i) in omissions"
+            :key="i"
+            :omission="o"
+            @viewed="handleViewed"
+          />
+    </div>
 </template>
 <style scoped>
 

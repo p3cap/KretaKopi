@@ -28,60 +28,61 @@ function setActive(key) {
 </script>
 
 <template>
-    <nav id="days">
-        <ArrowLeft class="week-switch left" @click="left"></ArrowLeft>
-        <p class="week">Január 01-07.</p>
-        <ArrowRight class="week-switch right" @click="right"></ArrowRight>
-        <ul>
-            <li @click="setActive('Mo')" :class="{ active: lista.Mo }">
-                <p @click="">{{ t("monday").slice(0,2) }}</p>
-                <!-- 
-                Pl fordítás: "monday" kulcs és csak az első 2 betűt mutassa 
-                fordítás hozzáadása a data/translate.js fájlban
-                -->
-                <p>6</p>
-            </li>
-            <li @click="setActive('Tu')" :class="{ active: lista.Tu }">
-                <p>{{ t("tuesday").slice(0,2) }}</p>
-                <p>31</p>
-            </li>
-            <li @click="setActive('We')" :class="{ active: lista.We }">
-                <p>{{ t("wednesday").slice(0,2) }}</p>
-                <p>13</p>
-            </li>
-            <li @click="setActive('Th')" :class="{ active: lista.Th }">
-                <p>{{ t("thursday").slice(0,2) }}</p>
-                <p>0</p>
-            </li>
-            <li @click="setActive('Fr')" :class="{ active: lista.Fr }">
-                <p>{{ t("friday").slice(0,2) }}</p>
-                <p>0</p>
-            </li>
-            <li @click="setActive('Sa')" :class="{ active: lista.Sa }">
-                <p>{{ t("saturday").slice(0,2) }}</p>
-                <p>0</p>
-            </li>
-            <li @click="setActive('Su')" :class="{ active: lista.Su }">
-                <p>{{ t("sunday").slice(0,2) }}</p>
-                <p>0</p>
-            </li>
-        </ul>
-    </nav>
-
-    <main>
-        <p class="day-name">{{ t(currentDay) }}</p>
-        <div class="lessons">
-            <LessonCard />
-            <LessonCard />
-            <LessonCard />
-            <LessonCard />
-            <LessonCard />
-            <LessonCard />
-            <LessonCard />
-            <LessonCard />
-            <LessonCard />
-        </div>
-    </main>
+    <div class="page">
+        <nav id="days">
+            <ArrowLeft class="week-switch left" @click="left"></ArrowLeft>
+            <p class="week">Január 01-07.</p>
+            <ArrowRight class="week-switch right" @click="right"></ArrowRight>
+            <ul>
+                <li @click="setActive('Mo')" :class="{ active: lista.Mo }">
+                    <p @click="">{{ t("monday").slice(0,2) }}</p>
+                    <!--
+                    Pl fordítás: "monday" kulcs és csak az első 2 betűt mutassa
+                    fordítás hozzáadása a data/translate.js fájlban
+                    -->
+                    <p>6</p>
+                </li>
+                <li @click="setActive('Tu')" :class="{ active: lista.Tu }">
+                    <p>{{ t("tuesday").slice(0,2) }}</p>
+                    <p>31</p>
+                </li>
+                <li @click="setActive('We')" :class="{ active: lista.We }">
+                    <p>{{ t("wednesday").slice(0,2) }}</p>
+                    <p>13</p>
+                </li>
+                <li @click="setActive('Th')" :class="{ active: lista.Th }">
+                    <p>{{ t("thursday").slice(0,2) }}</p>
+                    <p>0</p>
+                </li>
+                <li @click="setActive('Fr')" :class="{ active: lista.Fr }">
+                    <p>{{ t("friday").slice(0,2) }}</p>
+                    <p>0</p>
+                </li>
+                <li @click="setActive('Sa')" :class="{ active: lista.Sa }">
+                    <p>{{ t("saturday").slice(0,2) }}</p>
+                    <p>0</p>
+                </li>
+                <li @click="setActive('Su')" :class="{ active: lista.Su }">
+                    <p>{{ t("sunday").slice(0,2) }}</p>
+                    <p>0</p>
+                </li>
+            </ul>
+        </nav>
+        <main>
+            <p class="day-name">{{ t(currentDay) }}</p>
+            <div class="lessons">
+                <LessonCard />
+                <LessonCard />
+                <LessonCard />
+                <LessonCard />
+                <LessonCard />
+                <LessonCard />
+                <LessonCard />
+                <LessonCard />
+                <LessonCard />
+            </div>
+        </main>
+    </div>
 </template>
 
 

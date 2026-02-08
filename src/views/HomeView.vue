@@ -20,12 +20,12 @@ function uzenet() {
 </script>
 
 <template>
-    <h1 id="uzenet">{{uzenet()}}, <br> {{ t("{user}") }}!</h1>
-    <HWContainer />
-
-    
-
-    <IdkComponent />
+    <div class="page">
+        <h1 id="uzenet">{{uzenet()}}, <br> {{ t("{user}") }}!</h1>
+        <HWContainer />
+        
+        <IdkComponent />
+    </div>
 
 </template>
 

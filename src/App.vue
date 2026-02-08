@@ -1,17 +1,18 @@
 <script setup>
-import { useRouter, RouterView } from 'vue-router'
+import { RouterView, useRouter } from 'vue-router'
 import { ref, watch } from 'vue'
 import { useSwipe } from '@vueuse/core'
 
 import Navbar from "./components/Navbar.vue"
-import Icon from './components/Icon.vue';
-import Profile from './components/Profile.vue';
+import Icon from './components/Icon.vue'
+import Profile from './components/Profile.vue'
 
 const router = useRouter()
-
 const swipeArea = ref(null)
 
 const pages = ['/orarend', '/jegyek', '/', '/hianyzasok', '/beallitasok']
+
+const transitionName = ref('slide-left')
 
 const { direction } = useSwipe(swipeArea, {
   threshold: 80,
@@ -22,14 +23,15 @@ watch(direction, (dir) => {
   const index = pages.indexOf(current)
 
   if (dir === 'left' && index < pages.length - 1) {
+    transitionName.value = 'slide-left'
     router.push(pages[index + 1])
   }
 
   if (dir === 'right' && index > 0) {
+    transitionName.value = 'slide-right'
     router.push(pages[index - 1])
   }
 })
-
 </script>
 
 <template>
@@ -38,14 +40,50 @@ watch(direction, (dir) => {
     <Icon/>
     <Profile />
     <Navbar/>
-    <RouterView />
+    <RouterView v-slot="{ Component }">
+      <Transition :name="transitionName" mode="out-in">
+        <component :is="Component" />
+      </Transition>
+    </RouterView>
 
   </div>
 </template>
 
 <style scoped>
   .app {
-    min-height: 100vh;
+    height: fit-content;
     touch-action: pan-y;
+    overflow-x: hidden;
+    padding-bottom: 1rem;
+  }
+
+  .slide-left-enter-active,
+  .slide-left-leave-active {
+    transition: transform 0.35s ease, opacity 0.35s ease;
+  }
+
+  .slide-left-enter-from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  .slide-left-leave-to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  .slide-right-enter-active,
+  .slide-right-leave-active {
+    transition: transform 0.35s ease, opacity 0.35s ease;
+  }
+
+  .slide-right-enter-from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  .slide-right-leave-to {
+    transform: translateX(100%);
+    opacity: 0;
   }
 </style>
