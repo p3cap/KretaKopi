@@ -24,7 +24,7 @@ Guys, legyen központi css rendszer >:(
     .lesson-card {
         background-color: var(--Bright-Snow);
         box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 10px;
-        border-radius: 1.5rem;
+        border-radius: 1rem;
         padding: 1rem 1.5rem;
         position: relative;
 

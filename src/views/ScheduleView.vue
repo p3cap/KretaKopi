@@ -28,7 +28,7 @@ function setActive(key) {
 </script>
 
 <template>
-    <div id="days">
+    <nav id="days">
         <ArrowLeft class="week-switch left" @click="left"></ArrowLeft>
         <p class="week">Január 01-07.</p>
         <ArrowRight class="week-switch right" @click="right"></ArrowRight>
@@ -66,7 +66,7 @@ function setActive(key) {
                 <p>0</p>
             </li>
         </ul>
-    </div>
+    </nav>
 
     <main>
         <p class="day-name">{{ t(currentDay) }}</p>
@@ -164,14 +164,14 @@ Guys, legyen központi css rendszer >:(
         }
     }
     main {
-        padding: 2rem 1rem 5rem 1rem;
+        padding: 2rem 0.5rem 0rem 0.5rem;
 
         .day-name {
             font-weight: 600;
             font-size: 2rem;
         }
         .lessons {
-            padding: 2rem 0;
+            padding: 2rem 0 0 0;
             display: flex;
             flex-direction: column;
             gap: 1rem;

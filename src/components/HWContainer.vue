@@ -5,16 +5,14 @@ import { translateKey as t } from "@/data/translate.js";
 </script>
 
 <template>
-    <main>
-        <div class="container">
-            <div id="header">
-                <NotebookPen id="note" />
-                <p id="title">{{ t("homeworks") }}</p>
-            </div>
-            <HomeWorks />
-            <HomeWorks />
+    <div class="container">
+        <div id="header">
+            <NotebookPen id="note" />
+            <p id="title">{{ t("homeworks") }}</p>
         </div>
-    </main>
+        <HomeWorks />
+        <HomeWorks />
+    </div>
 </template>
 
 
@@ -29,10 +27,6 @@ Guys, legyen központi css rendszer >:(
 -->
 
 <style scoped>
-main {
-    display: flex;
-    justify-content: center;
-}
 .container {
     display: flex;
     flex-direction: column;
@@ -42,7 +36,7 @@ main {
     border-radius: 1rem;
     padding: 15px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px inset, rgba(0, 0, 0, 0.3) 0px 3px 7px 3px inset;
-    margin: 20px 0 20px 0;
+    margin: 20px auto 20px auto;
 }
 #header {
     position: relative;

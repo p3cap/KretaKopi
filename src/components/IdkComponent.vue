@@ -14,8 +14,8 @@ onMounted(() => {
 </script>
 
 <template>
+  <h2 class="title">Notifications</h2>
   <div class="notifications">
-    <h2 class="title">Notifications</h2>
     <div v-if="notifications.length === 0">No notifications found.</div>
     <ul v-else class="notification-list">
       <li v-for="(item, index) in notifications" :key="index" class="notification-item">
@@ -59,25 +59,28 @@ Guys, legyen központi css rendszer >:(
 
 .title {
   text-align: center;
-  margin-bottom: 16px;
+  margin-bottom: 1rem;
 }
 
 .notification-list {
   list-style: none;
-  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0 .5rem;
 }
 
 .notification-item {
-  background: #f3f3f3;
-  border-radius: 8px;
-  padding: 12px;
-  margin-bottom: 12px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background: var(--Bright-Snow);
+  border-radius: 1rem;
+  padding: 1rem;
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 10px;
 }
 
 .notification-header {
   font-size: 0.9em;
-  color: #555;
+  color: var(--Iron-Grey);
   margin-bottom: 4px;
 }
 
@@ -88,6 +91,6 @@ Guys, legyen központi css rendszer >:(
 
 .notification-details {
   font-size: 0.85em;
-  color: #333;
+  color: var(--Gunmetal);
 }
 </style>
