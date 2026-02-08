@@ -31,7 +31,7 @@ Guys, legyen központi css rendszer >:(
         &::before {
             content: '';
             position: absolute;
-            height: 1.5rem;
+            height: 2rem;
             width: 4px;
             background-color: var(--Secondary);
             left: -1px;
