@@ -2,6 +2,8 @@
 import { ref, watch, nextTick } from 'vue'
 import { waapi, animate, utils, eases } from 'animejs'
 import { User } from 'lucide-vue-next'
+import { translateKey as t } from "@/data/translate.js";
+
 const open = ref(false)
 const btn = ref(null)
 
@@ -42,7 +44,7 @@ watch(open, async (val) => {
         <transition name="overlay">
             <div v-if="open" class="overlay" @click.self="open = false">
                 <div class="sheet">
-                    <h2>Szia (name)!</h2>
+                    <h1>{{ t("{user}") }}</h1>
                 </div>
             </div>
         </transition>

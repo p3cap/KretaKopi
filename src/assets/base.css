@@ -8,9 +8,13 @@
     --Iron-Grey: #45505A;
     --Gunmetal: #303A43;
     --Carbon-Black: #1D252C;
-    --Primary: hsl(0, 100%, 30%);
-    --Secondary: hsl(0, 100%, 40%);
-    --Bright-Red : rgb(226, 56, 56);
+    --Primary: #990000;
+    --Secondary: #cc0000;
+    --Bright-Red: #e23838;
+    --Ferrari-Red: #FF2800;
+    --Ferrari-Red2: #EE0600;
+    --Green: #00ff67;
+    --Main-Shadow: rgba(0, 0, 0, 0.2) 0px 5px 10px;
 
     /* kene valami cool zold orsbacsi meg valami masik piros*/
 }

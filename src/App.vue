@@ -12,26 +12,26 @@ const swipeArea = ref(null)
 
 const pages = ['/orarend', '/jegyek', '/', '/hianyzasok', '/beallitasok']
 
-const transitionName = ref('slide-left')
+// const transitionName = ref('slide-left')
 
-const { direction } = useSwipe(swipeArea, {
-  threshold: 80,
-})
+// const { direction } = useSwipe(swipeArea, {
+//   threshold: 80,
+// })
 
-watch(direction, (dir) => {
-  const current = router.currentRoute.value.path
-  const index = pages.indexOf(current)
+// watch(direction, (dir) => {
+//   const current = router.currentRoute.value.path
+//   const index = pages.indexOf(current)
 
-  if (dir === 'left' && index < pages.length - 1) {
-    transitionName.value = 'slide-left'
-    router.push(pages[index + 1])
-  }
+//   if (dir === 'left' && index < pages.length - 1) {
+//     transitionName.value = 'slide-left'
+//     router.push(pages[index + 1])
+//   }
 
-  if (dir === 'right' && index > 0) {
-    transitionName.value = 'slide-right'
-    router.push(pages[index - 1])
-  }
-})
+//   if (dir === 'right' && index > 0) {
+//     transitionName.value = 'slide-right'
+//     router.push(pages[index - 1])
+//   }
+// })
 </script>
 
 <template>
@@ -41,9 +41,9 @@ watch(direction, (dir) => {
     <Profile />
     <Navbar/>
     <RouterView v-slot="{ Component }">
-      <Transition :name="transitionName" mode="out-in">
+      <!-- <Transition :name="transitionName" mode="out-in"> -->
         <component :is="Component" />
-      </Transition>
+      <!-- </Transition> -->
     </RouterView>
 
   </div>
@@ -57,7 +57,7 @@ watch(direction, (dir) => {
     padding-bottom: 1rem;
   }
 
-  .slide-left-enter-active,
+  /* .slide-left-enter-active,
   .slide-left-leave-active {
     transition: transform 0.35s ease, opacity 0.35s ease;
   }
@@ -85,5 +85,5 @@ watch(direction, (dir) => {
   .slide-right-leave-to {
     transform: translateX(100%);
     opacity: 0;
-  }
+  } */
 </style>

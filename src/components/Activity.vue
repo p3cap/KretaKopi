@@ -69,7 +69,7 @@ Guys, legyen központi css rendszer >:(
 }
 .container:hover {
     background-color: aliceblue;
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 10px;
+    box-shadow: var(--Main-Shadow);
 }
 div p {
     font-size: 0.8rem;

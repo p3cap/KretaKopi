@@ -75,7 +75,7 @@ Guys, legyen központi css rendszer >:(
   border-radius: 1rem;
   padding: 1rem;
   /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 10px;
+  box-shadow: var(--Main-Shadow);
 }
 
 .notification-header {

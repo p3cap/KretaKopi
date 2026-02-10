@@ -4,9 +4,13 @@ import { translateKey as t } from "@/data/translate.js";
 import { ArrowLeft, ArrowRight } from "lucide-vue-next";
 
 import LessonCard from "../components/LessonCard.vue";
-import { ref } from "vue";
+import { ref, reactive } from "vue";
+import { getData } from "@/data/data";
 
-const currentDay = ref('monday');
+const timetable = reactive(getData("timetable"));
+const teachers = reactive(getData("teachers"))
+// console.log(timetable);
+// console.log(teachers);
 
 function left() {
 
@@ -15,14 +19,15 @@ function right() {
 
 }
 
-import { reactive } from 'vue';
-
 // const isActive = ref(true)
 const lista = reactive({'Mo': true, 'Tu': false, 'We': false, 'Th': false, 'Fr': false, 'Sa': false, 'Su': false})
+
+const aktivNap = ref("Mo")
 
 function setActive(key) {
     Object.keys(lista).forEach(k => (lista[k] = false))
     lista[key] = true
+    aktivNap.value = key
 }
 
 </script>
@@ -35,7 +40,7 @@ function setActive(key) {
             <ArrowRight class="week-switch right" @click="right"></ArrowRight>
             <ul>
                 <li @click="setActive('Mo')" :class="{ active: lista.Mo }">
-                    <p @click="">{{ t("monday").slice(0,2) }}</p>
+                    <p>{{ t("monday").slice(0,2) }}</p>
                     <!--
                     Pl fordítás: "monday" kulcs és csak az első 2 betűt mutassa
                     fordítás hozzáadása a data/translate.js fájlban
@@ -69,17 +74,14 @@ function setActive(key) {
             </ul>
         </nav>
         <main>
-            <p class="day-name">{{ t(currentDay) }}</p>
             <div class="lessons">
-                <LessonCard />
-                <LessonCard />
-                <LessonCard />
-                <LessonCard />
-                <LessonCard />
-                <LessonCard />
-                <LessonCard />
-                <LessonCard />
-                <LessonCard />
+                
+            </div>
+            <div class="lesson-holder" v-for="(day, day_name) in timetable">
+                <div class="lessons" v-if="day_name.slice(0,2).toLowerCase() === aktivNap.toLowerCase()">
+                    <p class="day-name">{{ t(day_name.toLowerCase()) }}</p>
+                    <LessonCard v-for="l in day" :lesson="l" :teacher="teachers[l.teacher_id]"/>
+                </div>
             </div>
         </main>
     </div>
@@ -106,7 +108,7 @@ Guys, legyen központi css rendszer >:(
         padding: 0.5rem;
         padding-top: 2.5rem;
         border-radius: 1.5rem;
-        box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 10px;
+        box-shadow: var(--Main-Shadow);
         position: relative;
         margin-top: 1rem;
 
@@ -157,7 +159,7 @@ Guys, legyen központi css rendszer >:(
             border-color: var(--Secondary);
             color: var(--Bright-Snow);
             box-shadow: 0px 0px 15px -5px var(--Secondary);
-            text-shadow: 0px 0px 2px white;
+            /* text-shadow: 0px 0px 2px white; */
 
             p:nth-of-type(2n) {
                 color: var(--Bright-Snow);
@@ -170,6 +172,7 @@ Guys, legyen központi css rendszer >:(
         .day-name {
             font-weight: 600;
             font-size: 2rem;
+            line-height: 3rem;
         }
         .lessons {
             padding: 2rem 0 0 0;

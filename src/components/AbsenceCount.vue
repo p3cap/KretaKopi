@@ -54,7 +54,7 @@ Guys, legyen központi css rendszer >:(
   border-radius: 12px;
   text-align: center;
   font-weight: 600;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 10px;
+  box-shadow: var(--Main-Shadow);
 
 }
 

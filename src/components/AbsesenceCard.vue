@@ -67,7 +67,7 @@ Guys, legyen központi css rendszer >:(
   border-left: 5px solid #999;
   cursor: pointer;
   margin: 20px;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 10px;
+  box-shadow: var(--Main-Shadow);
 }
 
 
