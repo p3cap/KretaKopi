@@ -22,9 +22,10 @@ function uzenet() {
 <template>
     <div class="page">
         <h1 id="uzenet">{{uzenet()}}, <br> {{ t("{user}") }}!</h1>
-        <HWContainer />
+        <HWContainer/>
         
-        <IdkComponent />
+        <ActivityContainer/>
+        <!-- <IdkComponent /> -->
     </div>
 
 </template>

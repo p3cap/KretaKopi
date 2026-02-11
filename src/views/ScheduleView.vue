@@ -11,27 +11,26 @@ import { getData } from "@/data/data";
 
 const timetable = reactive(getData("timetable"));
 const teachers = reactive(getData("teachers"));
-// console.log(timetable);
-// console.log(teachers);
+console.debug(timetable);
+console.debug(teachers);
 
 
-// erről beszélek h szerda van
+// computed -> updatelődik
 const date = ref(dayjs());
 const weekStart = computed(function(){ 
-    return date.value.startOf("week").add(1,"day") 
-})// alapbó, vasárnap lenne
-const dateTitle = computed(function(){ 
-    return weekStart.value.format("MMMM") +" "+ weekStart.format("D") +"-"+ weekStart.add(Object.keys(timetable).length-1, "day").format("D")
+    return date.value.startOf("week").add(1,"day") // alapbó, vasárnap lenne
 })
-const aktivNap = computed(function(){ 
-    return date.value.format("dddd").toLowerCase() 
+const dateTitle = computed(function(){ 
+    return weekStart.value.format("MMMM") +" "+ weekStart.value.format("D") +"-"+ weekStart.value.add(Object.keys(timetable).length-1, "day").format("D")
 })
 
-function left() {
-    date.value = date.add(-1, "week")
+const selectedDay = ref(date.value.format("dddd").toLowerCase())
+
+function backWeek() {
+    date.value = date.value.add(-1, "week")
 }
-function right() {
-    date.value = date.add(1, "week")
+function forwardWeek() {
+    date.value = date.value.add(1, "week")
 }
 
 </script>
@@ -39,13 +38,13 @@ function right() {
 <template>
     <div class="page">
         <nav id="days">
-            <ArrowLeft class="week-switch left" @click="left"></ArrowLeft>
+            <ArrowLeft class="week-switch left" @click="backWeek"></ArrowLeft>
 
             <p class="week">{{ dateTitle }}</p>
 
-            <ArrowRight class="week-switch right" @click="right"></ArrowRight>
+            <ArrowRight class="week-switch right" @click="forwardWeek"></ArrowRight>
             <ul>
-                <li v-for="(_,day_name, i) in timetable" @click="aktivNap = day_name" :class="{ active: aktivNap===day_name }">
+                <li v-for="(_,day_name, i) in timetable" @click="selectedDay = day_name" :class="{ active: selectedDay===day_name }">
                     <p>{{ t(day_name).slice(0,2) }}</p>
                     <p>{{ weekStart.add(i, "day").format("D") }}</p>
                 </li>
@@ -53,7 +52,7 @@ function right() {
         </nav>
         <main>
             <div class="lesson-holder" v-for="(day, day_name) in timetable">
-                <div class="lessons" v-if="day_name === aktivNap">
+                <div class="lessons" v-if="day_name === selectedDay">
                     <p class="day-name">{{ t(day_name.toLowerCase()) }}</p>
                     <LessonCard v-for="l in day" :lesson="l" :teacher="teachers[l.teacher_id]"/>
                 </div>

@@ -32,7 +32,16 @@ const router = createRouter({
       path: '/beallitasok',
       name: 'beallitasok',
       component: SettingView,
-    }
+    },
+    { // teacher side protecion to be implemented
+      path: '/teacher',
+      component: () => import('@/views/teacher/TeacherDashboard.vue'),
+      meta: { requiresRole: 'teacher' },
+      children: [
+        { path: '', redirect: '/teacher/dashboard' },
+        { path: 'dashboard', component: () => import('@/views/teacher/TeacherDashboard.vue') }
+      ]
+    },
     
   ],
 })

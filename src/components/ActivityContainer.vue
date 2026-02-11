@@ -6,14 +6,7 @@ import { translateKey as t } from "@/data/translate.js";
 <template>
   <div class="activity-container">
     <h1>{{ t('today') }}</h1>
-    <Activity />
-    <Activity />
-    <Activity />
-    <Activity />
-    <Activity />
-    <Activity />
-    <Activity />
-    <Activity />
+    <Activity/>
   </div> 
 </template>
 

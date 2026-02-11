@@ -2,6 +2,7 @@
 import { NotebookPen } from 'lucide-vue-next';
 import HomeWorks from "../components/HomeWorks.vue";
 import { translateKey as t } from "@/data/translate.js";
+
 </script>
 
 <template>
@@ -10,8 +11,7 @@ import { translateKey as t } from "@/data/translate.js";
             <NotebookPen id="note" />
             <p id="title">{{ t("homeworks") }}</p>
         </div>
-        <HomeWorks />
-        <HomeWorks />
+        <HomeWorks/>
     </div>
 </template>
 
