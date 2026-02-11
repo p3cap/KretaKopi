@@ -289,7 +289,8 @@
       "date": "2025-10-14",
       "is_justified": true,
       "justification_type": "medical_justification",
-      "teacher_id": "1001"
+      "teacher_id": "1001",
+      "viewed": true
     },
     {
       "class_id": "Physics-11a",
@@ -358,7 +359,7 @@
     }
   },
   "timetable": {
-    "Friday": [
+    "monday": [
       {
         "class_id": "Literature-11a",
         "end_time": "08:45",
@@ -381,7 +382,7 @@
         "teacher_id": "1003"
       }
     ],
-    "Monday": [
+    "tuesday": [
       {
         "class_id": "Mathematics-11a-Advanced",
         "end_time": "08:45",
@@ -418,9 +419,7 @@
         "teacher_id": "1005"
       }
     ],
-    "saturday": [],
-    "sunday": [],
-    "Thursday": [
+    "wednesday": [
       {
         "class_id": "Grammar-11a",
         "end_time": "08:45",
@@ -450,7 +449,7 @@
         "teacher_id": "1005"
       }
     ],
-    "Tuesday": [
+    "thursday": [
       {
         "class_id": "Literature-11a",
         "end_time": "08:45",
@@ -480,7 +479,7 @@
         "teacher_id": "1008"
       }
     ],
-    "Wednesday": [
+    "friday": [
       {
         "class_id": "English-11a",
         "end_time": "08:45",
@@ -509,7 +508,9 @@
         "start_time": "11:00",
         "teacher_id": "1010"
       }
-    ]
+    ],
+    "saturday": [],
+    "sunday": []
   },
   "massages": {
     "12345": {
