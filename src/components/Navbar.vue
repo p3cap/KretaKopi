@@ -108,7 +108,7 @@ watch(
 <div ref="circleRef" class="circle"></div>
 </nav>
 
-<div class="bg-blur"></div>
+<!-- <div class="bg-blur"></div> -->
 </template>
 
 
@@ -187,7 +187,7 @@ nav {
   }
 
 }
-.bg-blur {
+/* .bg-blur {
   width: 100vw;
   height: 3rem;
   background-color: transparent;
@@ -196,5 +196,5 @@ nav {
   left: 0;
   z-index: 20;
   backdrop-filter: blur(2.5px);
-}
+} */
 </style>

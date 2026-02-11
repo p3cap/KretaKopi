@@ -36,7 +36,7 @@ const pages = ['/orarend', '/jegyek', '/', '/hianyzasok', '/beallitasok']
 
 <template>
   <div ref="swipeArea" class="app">
-
+    <div class="top-shadow"></div>
     <Icon/>
     <Profile />
     <Navbar/>
@@ -45,11 +45,27 @@ const pages = ['/orarend', '/jegyek', '/', '/hianyzasok', '/beallitasok']
         <component :is="Component" />
       <!-- </Transition> -->
     </RouterView>
-
+    <div class="bottom-shadow"></div>
   </div>
 </template>
 
 <style scoped>
+  .top-shadow {
+    position: fixed;
+    top: 0;
+    height: 5rem;
+    width: 100vw;
+    background-image: linear-gradient(180deg, var(--Alabaster-Grey), transparent);
+    z-index: 25;
+  }
+  .bottom-shadow {
+    position: fixed;
+    bottom: 0;
+    height: 5rem;
+    width: 100vw;
+    background-image: linear-gradient(0deg, var(--Alabaster-Grey) 50%, transparent);
+    z-index: 25;
+  }
   .app {
     height: fit-content;
     touch-action: pan-y;

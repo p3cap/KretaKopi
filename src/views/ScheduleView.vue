@@ -74,9 +74,6 @@ function setActive(key) {
             </ul>
         </nav>
         <main>
-            <div class="lessons">
-                
-            </div>
             <div class="lesson-holder" v-for="(day, day_name) in timetable">
                 <div class="lessons" v-if="day_name.slice(0,2).toLowerCase() === aktivNap.toLowerCase()">
                     <p class="day-name">{{ t(day_name.toLowerCase()) }}</p>
@@ -175,7 +172,7 @@ Guys, legyen központi css rendszer >:(
             line-height: 3rem;
         }
         .lessons {
-            padding: 2rem 0 0 0;
+            padding: 1rem 0 0 0;
             display: flex;
             flex-direction: column;
             gap: 1rem;
