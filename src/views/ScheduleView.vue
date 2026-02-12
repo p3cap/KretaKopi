@@ -54,6 +54,7 @@ function forwardWeek() {
             <div class="lesson-holder" v-for="(day, day_name) in timetable">
                 <div class="lessons" v-if="day_name === selectedDay">
                     <p class="day-name">{{ t(day_name.toLowerCase()) }}</p>
+                    <p v-if="day.length < 1">{{ t("empty_timetable_msg") }}</p>
                     <LessonCard v-for="l in day" :lesson="l" :teacher="teachers[l.teacher_id]"/>
                 </div>
             </div>

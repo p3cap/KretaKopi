@@ -199,6 +199,10 @@ export default {
     "HU": "Normál jegy",
     "EN": "Normal Mark"
   },
+  "empty_timetable_msg" : {
+    "HU": "Nincs ma órád 😝",
+    "EN": "No classes today 😝"
+  },
   "grade_notification_msg": {
     "HU": "{user} új értékelést kapott ({grade}) {subject} tantárgyból",
     "EN": "{user} got a new mark ({grade}) from {subject} class"
