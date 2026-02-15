@@ -36,11 +36,11 @@ function setActive(key, e) {
 
 // (opcionális) ha route alapján is akarod állítani, hogy mi az aktív:
 function keyFromPath(path) {
-  if (path === "/") return "home"
-  if (path.startsWith("/orarend")) return "orarend"
-  if (path.startsWith("/jegyek")) return "naplo"
-  if (path.startsWith("/hianyzasok")) return "hianyzas"
-  if (path.startsWith("/beallitasok")) return "settings"
+  if (path === "/student") return "home"
+  if (path.startsWith("/student/orarend")) return "orarend"
+  if (path.startsWith("/student/jegyek")) return "naplo"
+  if (path.startsWith("/student/hianyzasok")) return "hianyzas"
+  if (path.startsWith("/student/beallitasok")) return "settings"
   return "home"
 }
 
@@ -75,31 +75,31 @@ watch(
 <nav ref="navRef">
 <ul>
     <li @click="(e) => setActive('orarend', e)" :class="{ active: lista.orarend }">
-    <RouterLink to="/orarend">
+    <RouterLink to="/student/orarend">
         <Calendar stroke-width="1.5"/>
     </RouterLink>
     </li>
 
     <li @click="(e) => setActive('naplo', e)" :class="{ active: lista.naplo }">
-    <RouterLink to="/jegyek">
+    <RouterLink to="/student/jegyek">
         <Book stroke-width="1.5"/>
     </RouterLink>
     </li>
 
     <li @click="(e) => setActive('home', e)" :class="{ active: lista.home }" id="home">
-    <RouterLink to="/">
+    <RouterLink to="/student">
         <House stroke-width="1.5"/>
     </RouterLink>
     </li>
 
     <li @click="(e) => setActive('hianyzas', e)" :class="{ active: lista.hianyzas }">
-    <RouterLink to="/hianyzasok">
+    <RouterLink to="/student/hianyzasok">
         <ClipboardClock stroke-width="1.5"/>
     </RouterLink>
     </li>
 
     <li @click="(e) => setActive('settings', e)" :class="{ active: lista.settings }">
-    <RouterLink to="/beallitasok">
+    <RouterLink to="/student/beallitasok">
         <Settings stroke-width="1.5"/>
     </RouterLink>
     </li>

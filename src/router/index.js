@@ -10,26 +10,30 @@ const router = createRouter({
   routes: [
     {
       path: '/',
+      redirect: '/student'
+    },
+    {
+      path: '/student',
       name: 'home',
       component: HomeView,
     },
     {
-      path: '/orarend',
+      path: '/student/orarend',
       name: 'orarend',
       component: ScheduleView,
     },
     {
-      path: '/jegyek',
+      path: '/student/jegyek',
       name: 'jegyek',
       component: GradesView,
     },
     {
-      path: '/hianyzasok',
+      path: '/student/hianyzasok',
       name: 'hianyzasok',
       component: AbsencesView,
     },
     {
-      path: '/beallitasok',
+      path: '/student/beallitasok',
       name: 'beallitasok',
       component: SettingView,
     },
